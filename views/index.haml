@@ -12,7 +12,8 @@
         %input{:type => 'submit'}
         %a{:href => '/'} clear
     -if params[:search1]
-      -@totals.each do |total|
-        %div
-          %div{:style => "width:#{get_percent(total, @overall_total)}%;"}
-          %p= "#{total} articles"
+      %ul
+        -@totals.each do |total|
+          %li
+            %div{:style => "width:#{get_percent(total, @overall_total)}%;"}
+              %p= "#{total} articles"
