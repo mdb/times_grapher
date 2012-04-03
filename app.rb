@@ -8,7 +8,8 @@ require 'net/http'
 
 get '/' do
   if params[:search1]
-    @totals = get_totals(params)
+    @full_data = get_data(params)
+    @totals = get_totals(@full_data)
     @queries = get_queries(params)
     @overall_total = @totals.inject(:+)
   end
@@ -29,15 +30,22 @@ def get_queries(params)
   return queries
 end
 
-def get_totals(params)
+def get_totals(data_array)
   totals = []
-  for i in 1...3
-    search_param = "search".concat(i.to_s).to_sym
-    data = get_json(params[search_param], '20110101', '20120101')
-    # TODO: totals.push :query => params[search_param], :count => data['total']
+  data_array.each do |data|
     totals.push data['total']
   end
   return totals
+end
+
+def get_data(params)
+  data_array = []
+  for i in 1...3
+    search_param = "search".concat(i.to_s).to_sym
+    data = get_json(params[search_param], '20110101', '20120101')
+    data_array.push data
+  end
+  return data_array
 end
 
 def get_json(query, begin_date, end_date)
