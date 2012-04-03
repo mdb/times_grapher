@@ -18,4 +18,4 @@
         -@totals.each_with_index do |total, index|
           %li
             %div{:style => "width:#{get_percent(total, @overall_total)}%;"}
-              %p= "#{total} articles containing #{@queries[index]}"
+              %p= "#{total} articles (#{get_percent(total, @overall_total)}% of #{@overall_total}) containing \"#{@queries[index]}\""
