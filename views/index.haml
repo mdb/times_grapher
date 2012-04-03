@@ -12,8 +12,8 @@
         %input{:type => 'text', :name => 'search2', :placeholder => 'Enter a keyword', :value => params[:search2]}
         %input{:type => 'submit'}
         %a{:href => '/'} clear
-    %h2= "#{@overall_total} 2011 NY Times articles containing the terms \"#{@queries[0]}\" and \"#{@queries[1]}\""
     -if params[:search1]
+      %h2= "#{@overall_total} 2011 NY Times articles containing the terms \"#{@queries[0]}\" and \"#{@queries[1]}\""
       %ul.graphs
         -@totals.each_with_index do |total, index|
           %li
