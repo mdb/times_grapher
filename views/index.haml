@@ -11,12 +11,8 @@
         %input{:type => 'text', :name => 'search2', :placeholder => 'Enter a keyword', :value => params[:search2]}
         %input{:type => 'submit'}
         %a{:href => '/'} clear
-    // TODO: clean up this mess:
     -if params[:search1]
-      %div
-        %div{:style => "width:#{get_percent(@data[:total1], @data[:overall_total])}%;"}
-          %p= "#{@data[:total1]} #{params[:search1]} articles"
-    -if params[:search2]
-      %div
-        %div{:style => "width:#{get_percent(@data[:total2], @data[:overall_total])}%;"}
-        %p= "#{@data[:total2]} #{params[:search2]} articles"
+      -@totals.each do |total|
+        %div
+          %div{:style => "width:#{get_percent(total, @overall_total)}%;"}
+          %p= "#{total} articles"
