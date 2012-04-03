@@ -9,6 +9,7 @@ require 'net/http'
 get '/' do
   if params[:search1]
     @totals = get_totals(params)
+    @queries = get_queries(params)
     @overall_total = @totals.inject(:+)
   end
 
@@ -19,11 +20,21 @@ get '/stylesheets/:name.css' do
   scss(:"stylesheets/#{params[:name]}")
 end
 
+def get_queries(params)
+  queries = []
+  for i in 1...3
+    search = params["search".concat(i.to_s).to_sym]
+    queries.push search
+  end
+  return queries
+end
+
 def get_totals(params)
   totals = []
   for i in 1...3
     search_param = "search".concat(i.to_s).to_sym
     data = get_json(params[search_param], '20110101', '20120101')
+    # TODO: totals.push :query => params[search_param], :count => data['total']
     totals.push data['total']
   end
   return totals
