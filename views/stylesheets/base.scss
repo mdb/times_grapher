@@ -1,2 +1,30 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
 body {
+  padding: 10px;
+}
+
+form {
+  margin-bottom: 20px;
+
+  fieldset {
+    border: none;
+  }
+}
+
+ul.graphs {
+  li {
+    background: #ddd;
+    height: 40px;
+    width: 100%;
+    margin-bottom: 10px;
+
+    div {
+      background: #bbb;
+      height: 40px;
+    }
+  }
 }
