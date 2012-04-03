@@ -13,7 +13,7 @@
         %input{:type => 'submit'}
         %a{:href => '/'} clear
     -if params[:search1]
-      %ul
+      %ul.graphs
         -@totals.each do |total|
           %li
             %div{:style => "width:#{get_percent(total, @overall_total)}%;"}
