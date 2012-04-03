@@ -42,7 +42,7 @@ def get_data(params)
   data_array = []
   for i in 1...3
     search_param = "search".concat(i.to_s).to_sym
-    data = get_json(params[search_param], '20110101', '20120101')
+    data = get_json(params[search_param], '20110101', '20111231')
     data_array.push data
   end
   return data_array
