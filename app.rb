@@ -1,6 +1,7 @@
 require 'rubygems'
 require 'sinatra'
 require 'compass'
+require 'sass'
 require 'Haml'
 require 'json'
 require 'net/http'
@@ -12,6 +13,10 @@ get '/' do
   end
 
   haml:index
+end
+
+get '/stylesheets/:name.css' do
+  scss(:"stylesheets/#{params[:name]}")
 end
 
 def get_totals(params)
