@@ -78,4 +78,16 @@ helpers do
   def format_num(num)
     return num.to_s.reverse.gsub(/...(?=.)/,'\&,').reverse
   end
+
+  def get_factors(num, divided_by)
+    divided_by -= 1
+    step = num.fdiv divided_by
+
+    factors = (0..divided_by).map do |i|
+      (i * step).round
+    end
+
+    factors.reverse
+  end
+     
 end

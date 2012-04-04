@@ -17,7 +17,7 @@
           %input{:type => 'submit'}
           %a{:href => '/', :class => 'clear'} clear
       -if params[:search1]
-        %h2= "In 2011, the New York Times published #{format_num(@overall_total)} articles containing <em>#{@queries[0]}</em> or <em>#{@queries[1]}</em>."
+        %h2= "In 2011, the New York Times published <em>#{format_num(@overall_total)} articles</em> containing <em>#{@queries[0]}</em> or <em>#{@queries[1]}</em>."
         %ul.graphs
           -@totals.each_with_index do |total, index|
             %li
@@ -33,5 +33,6 @@
               %li{:class => "label-#{index}"}
                 = "#{@queries[index]}"
           %ul.y-axis
-            %li= "#{format_num(@overall_total)}"
-
+            -get_factors(@overall_total, 6).each_with_index do |factor, index|
+              %li{:class => "label-#{index}"}
+                #{format_num(factor)}
