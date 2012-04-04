@@ -12,7 +12,6 @@ get '/' do
     @totals = get_totals(@full_data)
     @queries = get_queries(params)
     @overall_total = @totals.inject(:+)
-    @formatted_overall_total = @overall_total.to_s.reverse.gsub(/...(?=.)/,'\&,').reverse
   end
 
   haml:index

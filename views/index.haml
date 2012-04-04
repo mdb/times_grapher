@@ -17,21 +17,21 @@
           %input{:type => 'submit'}
           %a{:href => '/', :class => 'clear'} clear
       -if params[:search1]
-        %h2= "In 2011, the New York Times published #{@formatted_overall_total} articles containing <em>#{@queries[0]}</em> or <em>#{@queries[1]}</em>."
+        %h2= "In 2011, the New York Times published #{format_num(@overall_total)} articles containing <em>#{@queries[0]}</em> or <em>#{@queries[1]}</em>."
         %ul.graphs
           -@totals.each_with_index do |total, index|
             %li
               %div{:style => "width:#{get_percent(total, @overall_total)}%;"}
-              %p= "#{total} articles (#{get_percent(total, @overall_total)}% of #{@formatted_overall_total}) containing \"#{@queries[index]}\""
+              %p= "#{total} articles (#{get_percent(total, @overall_total)}% of #{format_num(@overall_total)}) containing \"#{@queries[index]}\""
         %div.graph
           %ul.bars
             -@totals.each_with_index do |total, index|
               %li{:style => "height:#{get_percent(total, @overall_total)}%;", :class => "bar-#{index}"}
-                #{total}
+                #{format_num(total)}
           %ul.labels
             -@totals.each_with_index do |total, index|
               %li{:class => "label-#{index}"}
                 = "#{@queries[index]}"
           %ul.y-axis
-            %li= "#{@formatted_overall_total}"
+            %li= "#{format_num(@overall_total)}"
 
