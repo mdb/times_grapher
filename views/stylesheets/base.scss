@@ -21,6 +21,10 @@ form {
   }
 }
 
+ul {
+  list-style-type: none;
+}
+
 header {
   padding: 40px 0 20px 0;
   width: 960px;
@@ -46,6 +50,8 @@ header {
 .container {
   width: 960px;
   margin: 0 auto;
+  padding-bottom: 100px;
+  overflow: visible;
 
   form {
     padding: 30px;
@@ -110,6 +116,65 @@ header {
         padding-left: 10px;
         color: #fff;
         position: absolute;
+      }
+    }
+  }
+
+  div.graph {
+    background: $secondary_background;
+    position: relative;
+    height: 500px;
+
+    ul.bars {
+      height: 400px;
+
+      li {
+        position: absolute;
+        width: 100px;
+        background: $tertiary_background;
+        bottom: 0;
+        color: #fff;
+        text-align: center;
+        padding-top: 10px;
+
+        &.bar-0 {
+          left: 100px;
+        }
+
+        &.bar-1 {
+          left: 300px;
+        }
+      }
+    }
+
+    ul.labels {
+      background: #222;
+      overflow: hidden;
+      height: 40px;
+      position: absolute;
+      bottom: -40px;
+      width: 100%;
+
+      li {
+        margin: 10px 0 0 100px;
+        color: #fff;
+        float: left;
+        width: 100px;
+        text-align: center;
+      }
+    }
+
+    ul.y-axis {
+      width: 100px;
+      position: absolute;
+      text-align: right;
+      left: -100px;
+      top: 0;
+
+      li {
+        color: #fff;
+        padding-right: 10px;
+        border-top: 1px solid $border_color;
       }
     }
   }

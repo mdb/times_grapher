@@ -23,3 +23,15 @@
             %li
               %div{:style => "width:#{get_percent(total, @overall_total)}%;"}
               %p= "#{total} articles (#{get_percent(total, @overall_total)}% of #{@formatted_overall_total}) containing \"#{@queries[index]}\""
+        %div.graph
+          %ul.bars
+            -@totals.each_with_index do |total, index|
+              %li{:style => "height:#{get_percent(total, @overall_total)}%;", :class => "bar-#{index}"}
+                #{total}
+          %ul.labels
+            -@totals.each_with_index do |total, index|
+              %li{:class => "label-#{index}"}
+                = "#{@queries[index]}"
+          %ul.y-axis
+            %li= "#{@formatted_overall_total}"
+
