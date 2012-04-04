@@ -1,3 +1,5 @@
+@import 'variables';
+
 * {
   margin: 0;
   padding: 0;
@@ -5,6 +7,10 @@
 
 body {
   padding: 10px;
+  background: $background_color;
+  font-family: times, georgia, serif;
+  font-size: 16px;
+  color: $text_color;
 }
 
 form {
@@ -15,16 +21,77 @@ form {
   }
 }
 
-ul.graphs {
-  li {
-    background: #ddd;
-    height: 40px;
-    width: 100%;
-    margin-bottom: 10px;
+header {
+  padding: 40px 0 20px 0;
+  width: 960px;
+  margin: 0 auto;
 
-    div {
-      background: #bbb;
+  h1 {
+    a {
+      font-size: 22px;
+      font-weight: normal;
+      color: #fff;
+      text-decoration: none;
+      line-height: 26px;
+
+      span {
+        display: block;
+        font-size: 18px;
+        color: $text_color;
+      }
+    }
+  }
+}
+
+.container {
+  width: 960px;
+  margin: 0 auto;
+
+  form {
+    padding: 30px;
+    margin-bottom: 30px;
+    border: 1px solid $border_color;
+
+    input {
+      background: $secondary_background;
+      border: 1px solid $border_color;
+      font-family: inherit;
+      font-size: 14px;
+      padding: 7px;
+      color: #fff; 
+      width: 25%;
+
+      &[type="submit"] {
+        color: $text_color;
+        width: 100px;
+        background: $background_color;
+
+        &:hover {
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
+  h2 {
+    font-weight: normal;
+    font-size: 18px;
+    margin-bottom: 15px;
+  }
+
+  ul.graphs {
+    list-style-type: none;
+
+    li {
+      background: $secondary_background;
       height: 40px;
+      width: 100%;
+      margin-bottom: 10px;
+
+      div {
+        background: $tertiary_background;
+        height: 40px;
+      }
     }
   }
 }
