@@ -4,18 +4,23 @@
     %title New York Times Grapher
     %link{:href => "/stylesheets/base.css", :media => "screen", :rel => "stylesheet", :type => "text/css"}
   %body
-    %h1 TimesGrapher
-    %p= @total
-    %form
-      %fieldset
-        %input{:type => 'text', :name => 'search1', :placeholder => 'Enter a keyword', :value => params[:search1]}
-        %input{:type => 'text', :name => 'search2', :placeholder => 'Enter a keyword', :value => params[:search2]}
-        %input{:type => 'submit'}
-        %a{:href => '/'} clear
-    -if params[:search1]
-      %h2= "#{@overall_total} 2011 NY Times articles containing the terms \"#{@queries[0]}\" and \"#{@queries[1]}\""
-      %ul.graphs
-        -@totals.each_with_index do |total, index|
-          %li
-            %div{:style => "width:#{get_percent(total, @overall_total)}%;"}
-              %p= "#{total} articles (#{get_percent(total, @overall_total)}% of #{@overall_total}) containing \"#{@queries[index]}\""
+    %header
+      %h1
+        %a{:href => '/'}
+          TimesGrapher
+          %span What topics were covered by the New York Times in 2011?
+    %div.container
+      %p= @total
+      %form
+        %fieldset
+          %input{:type => 'text', :name => 'search1', :placeholder => 'Enter a topic', :value => params[:search1]}
+          %input{:type => 'text', :name => 'search2', :placeholder => 'Enter a second topic', :value => params[:search2]}
+          %input{:type => 'submit'}
+          %a{:href => '/'} clear
+      -if params[:search1]
+        %h2= "In 2011, the New York Times published #{@overall_total} articles containing \"#{@queries[0]}\" or \"#{@queries[1]}.\""
+        %ul.graphs
+          -@totals.each_with_index do |total, index|
+            %li
+              %div{:style => "width:#{get_percent(total, @overall_total)}%;"}
+                %p= "#{total} articles (#{get_percent(total, @overall_total)}% of #{@overall_total}) containing \"#{@queries[index]}\""
