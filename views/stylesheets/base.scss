@@ -122,6 +122,7 @@ header {
 
   div.graph {
     background: $secondary_background;
+    background:url('/images/tile.png');
     position: relative;
     height: 500px;
 
@@ -138,17 +139,16 @@ header {
         padding-top: 10px;
 
         &.bar-0 {
-          left: 100px;
+          left: 30px;
         }
 
         &.bar-1 {
-          left: 300px;
+          left: 190px;
         }
       }
     }
 
     ul.labels {
-      background: #222;
       overflow: hidden;
       height: 40px;
       position: absolute;
@@ -156,11 +156,15 @@ header {
       width: 100%;
 
       li {
-        margin: 10px 0 0 100px;
+        margin: 10px 0 0 60px;
         color: #fff;
         float: left;
         width: 100px;
         text-align: center;
+
+        &.label-0 {
+          margin-left: 30px;
+        }
       }
     }
 
@@ -174,7 +178,6 @@ header {
       li {
         color: #fff;
         padding-right: 10px;
-        border-top: 1px solid $border_color;
       }
     }
   }
