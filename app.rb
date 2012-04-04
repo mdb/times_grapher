@@ -75,4 +75,8 @@ helpers do
       return (100 * num)/total
     end
   end
+
+  def format_num(num)
+    return num.to_s.reverse.gsub(/...(?=.)/,'\&,').reverse
+  end
 end
