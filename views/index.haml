@@ -18,9 +18,9 @@
           %input{:type => 'submit'}
           %a{:href => '/', :class => 'clear'} clear
       -if params[:search1]
-        %h2= "In 2011, the New York Times published #{@overall_total} articles containing <em>#{@queries[0]}</em> or <em>#{@queries[1]}</em>."
+        %h2= "In 2011, the New York Times published #{@formatted_overall_total} articles containing <em>#{@queries[0]}</em> or <em>#{@queries[1]}</em>."
         %ul.graphs
           -@totals.each_with_index do |total, index|
             %li
               %div{:style => "width:#{get_percent(total, @overall_total)}%;"}
-                %p= "#{total} articles (#{get_percent(total, @overall_total)}% of #{@overall_total}) containing \"#{@queries[index]}\""
+              %p= "#{total} articles (#{get_percent(total, @overall_total)}% of #{@formatted_overall_total}) containing \"#{@queries[index]}\""
