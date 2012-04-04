@@ -123,7 +123,7 @@ header {
 
   div.graph {
     background: $secondary_background;
-    background:url('/images/tile.png');
+    background:url('/images/dark-tile.png');
     position: relative;
     height: 500px;
 
@@ -150,8 +150,6 @@ header {
     }
 
     ul.labels {
-      overflow: hidden;
-      height: 40px;
       position: absolute;
       bottom: -40px;
       width: 100%;
