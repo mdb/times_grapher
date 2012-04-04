@@ -71,6 +71,11 @@ header {
         }
       }
     }
+
+    a.clear {
+      color: $link_color;
+      margin-left: 3px;
+    }
   }
 
   h2 {
@@ -87,10 +92,13 @@ header {
       height: 40px;
       width: 100%;
       margin-bottom: 10px;
+      line-height: 40px;
 
       div {
         background: $tertiary_background;
         height: 40px;
+        padding-left: 10px;
+        color: #fff;
       }
     }
   }
