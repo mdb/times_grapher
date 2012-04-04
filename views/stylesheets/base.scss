@@ -96,6 +96,7 @@ header {
   }
 
   ul.graphs {
+    display: none; //temporarily hiding this
     list-style-type: none;
 
     li {
@@ -178,6 +179,11 @@ header {
       li {
         color: #fff;
         padding-right: 10px;
+        height: 100px;
+
+        &.label-0 {
+          height: 93px;
+        }
       }
     }
   }
