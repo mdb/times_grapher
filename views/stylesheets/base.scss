@@ -98,12 +98,18 @@ header {
       width: 100%;
       margin-bottom: 10px;
       line-height: 40px;
+      position: relative;
 
       div {
         background: $tertiary_background;
         height: 40px;
+        position: absolute;
+      }
+
+      p {
         padding-left: 10px;
         color: #fff;
+        position: absolute;
       }
     }
   }
