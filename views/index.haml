@@ -18,7 +18,7 @@
           %input{:type => 'submit'}
           %a{:href => '/', :class => 'clear'} clear
       -if params[:search1]
-        %h2= "In 2011, the New York Times published #{@overall_total} articles containing \"#{@queries[0]}\" or \"#{@queries[1]}.\""
+        %h2= "In 2011, the New York Times published #{@overall_total} articles containing <em>#{@queries[0]}</em> or <em>#{@queries[1]}</em>."
         %ul.graphs
           -@totals.each_with_index do |total, index|
             %li
