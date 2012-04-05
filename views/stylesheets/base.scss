@@ -191,4 +191,17 @@ header {
       }
     }
   }
+
+  ul.articles {
+    display: none;
+
+    li {
+      margin-bottom: 10px;
+
+      a {
+        display: block;
+      }
+    }
+    
+  }
 }
