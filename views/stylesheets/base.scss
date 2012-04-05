@@ -11,19 +11,25 @@ body {
   font-family: times, georgia, serif;
   font-size: 16px;
   color: $text_color;
-}
 
-form {
-  margin-bottom: 20px;
+  a {
+    color: $link_color;;
+  }
 
-  fieldset {
-    border: none;
+  form {
+    margin-bottom: 20px;
+
+    fieldset {
+      border: none;
+    }
+  }
+
+  ul {
+    list-style-type: none;
   }
 }
 
-ul {
-  list-style-type: none;
-}
+
 
 header {
   padding: 40px 0 20px 0;
@@ -34,7 +40,7 @@ header {
     a {
       font-size: 22px;
       font-weight: normal;
-      color: #fff;
+      color: $highlight;
       text-decoration: none;
       line-height: 26px;
 
@@ -64,7 +70,7 @@ header {
       font-family: inherit;
       font-size: 14px;
       padding: 7px;
-      color: #fff; 
+      color: $highlight; 
       width: 25%;
 
       &[type="submit"] {
@@ -79,7 +85,7 @@ header {
     }
 
     a.clear {
-      color: $link_color;
+      color: $text_color;
       margin-left: 3px;
     }
   }
@@ -90,7 +96,7 @@ header {
     margin-bottom: 15px;
 
     em {
-      color: #fff;
+      color: $highlight;
       font-style: normal;
     }
   }
@@ -115,7 +121,7 @@ header {
 
       p {
         padding-left: 10px;
-        color: #fff;
+        color: $highlight;
         position: absolute;
       }
     }
@@ -135,7 +141,7 @@ header {
         width: 100px;
         background: $tertiary_background;
         bottom: 0;
-        color: #fff;
+        color: $highlight;
         text-align: center;
         padding-top: 10px;
 
@@ -156,7 +162,7 @@ header {
 
       li {
         margin: 10px 0 0 60px;
-        color: #fff;
+        color: $highlight;
         float: left;
         width: 100px;
         text-align: center;
@@ -175,7 +181,7 @@ header {
       top: 0;
 
       li {
-        color: #fff;
+        color: $highlight;
         padding-right: 10px;
         height: 100px;
 
