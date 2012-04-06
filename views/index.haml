@@ -4,6 +4,11 @@
     %title New York Times Grapher
     %link{:href => "/stylesheets/base.css", :media => "screen", :rel => "stylesheet", :type => "text/css"}
     %script{:src => 'https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js'}
+    %script{:src => '/javascript/tg.js'}
+    :javascript
+      $(document).ready(function () {
+        TG.overlay.init();
+      });
   %body
     %header
       %h1
@@ -28,7 +33,7 @@
           %ul.bars
             -@totals.each_with_index do |total, index|
               %li{:style => "height:#{get_percent(total, @overall_total)}%;", :class => "bar-#{index}"}
-                #{format_num(total)}
+                %a{:href => "#", :"data-role" => "overlay-trigger", :"data-overlay" => "ul.articles.search#{index + 1}"} "#{format_num(total)}"
           %ul.labels
             -@totals.each_with_index do |total, index|
               %li{:class => "label-#{index}"}
@@ -39,7 +44,7 @@
                 #{format_num(factor)}
       -if params[:search1]
         %div.search
-          %ul.articles.search1
+          %ul.articles.search1.overlay
             -@full_data[0]['results'].each do |item|
               %li
                 %a{:href => item['url']}
@@ -55,3 +60,4 @@
                 %cite= "#{item['byline']}"
                 %time= "#{item['date']}"
                 %p= "#{item['body']}..."
+    %div#overlay-mask
