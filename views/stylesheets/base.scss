@@ -150,6 +150,11 @@ header {
         &.bar-1 {
           left: 190px;
         }
+
+        a {
+          height: 100%;
+          display: block;
+        }
       }
     }
 
