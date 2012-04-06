@@ -33,7 +33,7 @@
           %ul.bars
             -@totals.each_with_index do |total, index|
               %li{:style => "height:#{get_percent(total, @overall_total)}%;", :class => "bar-#{index}"}
-                %a{:href => "#", :"data-role" => "overlay-trigger", :"data-overlay" => "ul.articles.search#{index + 1}"} "#{format_num(total)}"
+                %a{:href => "#", :"data-role" => "overlay-trigger", :"data-overlay" => "ul.articles.search#{index + 1}"} #{format_num(total)}
           %ul.labels
             -@totals.each_with_index do |total, index|
               %li{:class => "label-#{index}"}
