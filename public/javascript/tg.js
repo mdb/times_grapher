@@ -11,14 +11,13 @@ TG.lightbox = (function ($) {
       var overlay;
 
       _self.trigger.click(function (evt) {
+        evt.preventDefault();
         overlay = $(this).data('overlay');
         _self.open($(overlay));
-        return false;
       })
     },
 
     open: function (overlay) {
-      console.log(overlay);
     }
   };
 
