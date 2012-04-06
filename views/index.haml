@@ -52,7 +52,7 @@
                 %cite= "#{item['byline']}"
                 %time= "#{item['date']}"
                 %p= "#{item['body']}..."
-          %ul.articles.search2
+          %ul.articles.search2.overlay
             -@full_data[1]['results'].each do |item|
               %li
                 %a{:href => item['url']}
