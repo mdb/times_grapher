@@ -25,6 +25,10 @@ body {
     }
   }
 
+  cite {
+    display: block;
+  }
+
   ul {
     list-style-type: none;
   }
@@ -141,7 +145,6 @@ header {
         bottom: 0;
         color: $highlight;
         text-align: center;
-        padding-top: 10px;
 
         &.bar-0 {
           left: 30px;
@@ -154,13 +157,14 @@ header {
         a {
           height: 100%;
           display: block;
+          padding-top: 10px;
         }
       }
     }
 
     ul.labels {
       position: absolute;
-      bottom: -40px;
+      bottom: -30px;
       width: 100%;
 
       li {
@@ -202,6 +206,7 @@ header {
       margin-bottom: 10px;
 
       a {
+        color: $text_color;
         display: block;
       }
     }
