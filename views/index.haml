@@ -49,15 +49,15 @@
               %li
                 %a{:href => item['url']}
                   #{item['title']}
-                %cite= "#{item['byline']}"
                 %time= "#{item['date']}"
+                %cite= "#{item['byline']}"
                 %p= "#{item['body']}..."
           %ul.articles.search2.overlay
             -@full_data[1]['results'].each do |item|
               %li
                 %a{:href => item['url']}
                   #{item['title']}
-                %cite= "#{item['byline']}"
                 %time= "#{item['date']}"
+                %cite= "#{item['byline']}"
                 %p= "#{item['body']}..."
     %div#overlay-mask
