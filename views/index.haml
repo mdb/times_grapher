@@ -50,7 +50,8 @@
                 %a{:href => item['url']}
                   #{item['title']}
                 %time= "#{format_date(item['date'])}"
-                %cite= "#{item['byline']}"
+                -if item['byline']
+                  %cite= "#{capitalize(item['byline'])}"
                 %p= "#{item['body']}..."
           %ul.articles.search2.overlay
             -@full_data[1]['results'].each do |item|
@@ -58,6 +59,7 @@
                 %a{:href => item['url']}
                   #{item['title']}
                 %time= "#{format_date(item['date'])}"
-                %cite= "#{item['byline']}"
+                -if item['byline']
+                  %cite= "#{capitalize(item['byline'])}"
                 %p= "#{item['body']}..."
     %div#overlay-mask
