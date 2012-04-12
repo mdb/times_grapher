@@ -94,5 +94,8 @@ helpers do
   def format_date(string)
     return Date.parse(string, "%Y%m%d").strftime("%B %d, %Y")
   end
-     
+
+  def capitalize(string)
+    return string.to_s.split(" ").each { |word| word.capitalize! }.join(" ")
+  end    
 end
