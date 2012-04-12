@@ -5,6 +5,7 @@ require 'sass'
 require 'Haml'
 require 'json'
 require 'net/http'
+require 'date'
 
 get '/' do
   if params[:search1]
@@ -88,6 +89,10 @@ helpers do
     end
 
     factors.reverse
+  end
+
+  def format_date(string)
+    return Date.parse(string, "%Y%m%d").strftime("%B %d, %Y")
   end
      
 end

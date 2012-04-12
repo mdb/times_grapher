@@ -49,7 +49,7 @@
               %li
                 %a{:href => item['url']}
                   #{item['title']}
-                %time= "#{item['date']}"
+                %time= "#{format_date(item['date'])}"
                 %cite= "#{item['byline']}"
                 %p= "#{item['body']}..."
           %ul.articles.search2.overlay
@@ -57,7 +57,7 @@
               %li
                 %a{:href => item['url']}
                   #{item['title']}
-                %time= "#{item['date']}"
+                %time= "#{format_date(item['date'])}"
                 %cite= "#{item['byline']}"
                 %p= "#{item['body']}..."
     %div#overlay-mask
