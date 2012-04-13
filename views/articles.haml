@@ -1,0 +1,9 @@
+%ul.articles.search1.overlay
+  -@data['results'].each do |item|
+    %li
+      %a{:href => item['url']}
+        #{item['title']}
+      %time= "#{format_date(item['date'])}"
+      -if item['byline']
+        %cite= "#{capitalize(item['byline'])}"
+      %p= "#{item['body']}..."
