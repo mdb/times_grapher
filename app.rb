@@ -5,7 +5,6 @@ require 'sass'
 require 'Haml'
 require 'json'
 require 'net/http'
-require 'date'
 
 get '/' do
   if params[:search1]
