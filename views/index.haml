@@ -53,6 +53,8 @@
                 -if item['byline']
                   %cite= "#{capitalize(item['byline'])}"
                 %p= "#{item['body']}..."
+            %li
+              %a{:"data-role" => "article-loader", :href => "/articles?search=#{params[:search1]}&offset=1"} Load more
           %ul.articles.search2.overlay
             -@full_data[1]['results'].each do |item|
               %li
