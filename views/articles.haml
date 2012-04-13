@@ -7,3 +7,5 @@
       -if item['byline']
         %cite= "#{capitalize(item['byline'])}"
       %p= "#{item['body']}..."
+  %li
+    %a{:"data-role" => "article-loader", :href => "/articles?search=#{params[:search]}&offset=#{params[:offset].to_i + 1}"} Load more
