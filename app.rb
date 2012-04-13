@@ -19,11 +19,8 @@ get '/' do
 end
 
 get '/articles' do
-  if params[:search1]
-    @full_data = get_data(params)
-    @totals = get_totals(@full_data)
-    @queries = get_queries(params)
-    @overall_total = @totals.inject(:+)
+  if params[:search] && params[:offset]
+    @data = get_json(params[:search], :offset => params[:offset])
   end
 
   haml:articles
