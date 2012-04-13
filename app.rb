@@ -18,6 +18,17 @@ get '/' do
   haml:index
 end
 
+get '/articles' do
+  if params[:search1]
+    @full_data = get_data(params)
+    @totals = get_totals(@full_data)
+    @queries = get_queries(params)
+    @overall_total = @totals.inject(:+)
+  end
+
+  haml:articles
+end
+
 get '/stylesheets/:name.css' do
   scss(:"stylesheets/#{params[:name]}")
 end
@@ -43,16 +54,22 @@ def get_data(params)
   data_array = []
   for i in 1...3
     search_param = "search".concat(i.to_s).to_sym
-    data = get_json(params[search_param], '20110101', '20111231')
+    data = get_json(params[search_param])
     data_array.push data
   end
   return data_array
 end
 
-def get_json(query, begin_date, end_date)
+def get_json(query, options = {})
+  options = {
+    :begin_date => '20110101',
+    :end_date => '20111231',
+    :offset => 0
+  }.merge(options)
+
   base_url = "http://api.nytimes.com/svc/search/v1/"
   api_key = ENV['NYTIMES_API_KEY']
-  query = "article?format=json&query=#{query}&begin_date=#{begin_date}&end_date=#{end_date}"
+  query = "article?format=json&query=#{query}&begin_date=#{options[:begin_date]}&end_date=#{options[:end_date]}&offset=#{options[:offset]}"
   url = "#{base_url}#{URI.encode(query)}&api-key=#{api_key}"
   resp = Net::HTTP.get_response(URI.parse(url))
   data = resp.body
