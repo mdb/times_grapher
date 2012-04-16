@@ -146,6 +146,30 @@ header {
         color: $highlight;
         text-align: center;
 
+        &:before {
+            content: '';
+            width: 35px;
+            height: 100%;
+            position: absolute;
+            top: 25px;
+            right: -35px;
+            background-color: $secondary_background;
+            -webkit-transform: skewY(55deg);
+            -webkit-transform-origin: top;
+            
+            -moz-transform: skewY(55deg);
+            -moz-transform-origin: top;
+            
+            -ms-transform: skewY(55deg);
+            -ms-transform-origin: top;    
+            
+            -o-transform: skewY(55deg);
+            -o-transform-origin: top;     
+            
+            transform: skewY(55deg);
+            transform-origin: top;
+        }
+
         &.bar-0 {
           left: 30px;
         }
@@ -163,9 +187,11 @@ header {
     }
 
     ul.labels {
+      background: #000;
       position: absolute;
-      bottom: -30px;
+      bottom: -50px;
       width: 100%;
+      min-height: 50px;
 
       li {
         margin: 10px 0 0 60px;
@@ -205,8 +231,16 @@ header {
       margin-bottom: 10px;
 
       a {
-        color: $text_color;
+        color: #000;
         display: block;
+      }
+
+      time {
+        font-style: italic;
+      }
+
+      cite {
+        font-style: normal;
       }
     }
     
