@@ -51,3 +51,34 @@ TG.overlay = (function ($) {
   return _self;
 
 })(jQuery);
+
+TG.articles = (function ($) {
+  var _self;
+
+  _self = {
+    load: function (options) {
+      var settings = {
+        url: '',
+        appendTo: 'div.overlay'
+      };
+
+      if (options) {
+        $.extend(settings, options);
+      }
+
+      $.ajax({
+        url: settings.url,
+        success: function(data) {
+          $(settings.appendTo).append(data);
+        },
+
+        error: function (data) {
+          console.log(data);
+        }
+      });
+    }
+  };
+
+  return _self;
+
+})(jQuery);
