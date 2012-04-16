@@ -8,6 +8,12 @@
     :javascript
       $(document).ready(function () {
         TG.overlay.init();
+        $('[data-role="articles-loader"]').live('click', function (evt) {
+          TG.articles.load({
+            appendTo: $(this).closest('div.overlay'),
+            url: $(this).attr('data-ajax-url')
+          });
+        });
       });
   %body
     %header
@@ -54,7 +60,7 @@
                   %cite= "#{capitalize(item['byline'])}"
                 %p= "#{item['body']}..."
             %li
-              %a{:"data-role" => "article-loader", :href => "/articles?search=#{params[:search1]}&offset=1"} Load more
+              %a{:"data-role" => "articles-loader", :"data-ajax-url" => "/articles?search=#{params[:search1]}&offset=1", :class => "load-more", :href => "#"} Load more
         %div.search.search2.overlay
           %ul.articles
             -@full_data[1]['results'].each do |item|
