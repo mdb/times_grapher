@@ -1,4 +1,4 @@
-%ul.articles
+%ul.articles.secondary
   -@data['results'].each do |item|
     %li
       %h2
@@ -9,4 +9,4 @@
       %time= "#{format_date(item['date'])}"
       %p= "#{item['body']}..."
   %li{:class=>'load'}
-    %a{:"data-role" => "article-loader", :class => "load-more", :href => "/articles?search=#{params[:search]}&offset=#{params[:offset].to_i + 1}"} Load more
+    %a{:"data-role" => "articles-loader", :class => "load-more", :"data-ajax-url" => "/articles?search=#{params[:search]}&offset=#{params[:offset].to_i + 1}", :href => "#"} Load more
