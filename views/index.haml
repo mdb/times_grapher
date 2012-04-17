@@ -68,6 +68,24 @@
                     %cite= "#{capitalize(item['byline'])}"
                   %time= "Published #{format_date(item['date'])}"
                   %p= "#{item['body']}..."
+    %div.overlay.about
+      %p
+        TimesGrapher utilizes the
+        %a{:target => "_blank", :href => "http://developer.nytimes.com/docs/read/article_search_api"} New York Times' articles API
+      %p
+        It's built on
+        %a{:target => "_blank", :href => "http://www.sinatrarb.com/"} Sinatra
+        and uses
+        %a{:target => "_blank", :href => "http://haml-lang.com/"} haml
+        and
+        %a{:target => "_blank", :href => "http://sass-lang.com/"} sass.
+      %p
+        View its source code on
+        %a{:target => "_blank", :href => "http://github.com/mdb/times_grapher"} Github.
+
+      %p
+        &copy; 2012
+        %a{:target => "_blank", :href => "http://mikeball.us"} MDB
     %div#overlay-mask
     %footer{:class => "#{footer_class(params)}"}
       %ul
@@ -76,3 +94,5 @@
           %a{:target => "_blank", :href => "http://mikeball.us"} MDB
         %li
           %a{:target => "_blank", :href => "http://github.com/mdb/times_grapher"} Source Code
+        %li
+          %a{:"data-role" => "overlay-trigger", :"data-overlay" => ".about", :href => "#"} About
