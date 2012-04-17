@@ -69,3 +69,10 @@
                   %time= "Published #{format_date(item['date'])}"
                   %p= "#{item['body']}..."
     %div#overlay-mask
+    %footer{:class => "#{footer_class(params)}"}
+      %ul
+        %li
+          &copy; 2012
+          %a{:target => "_blank", :href => "http://mikeball.us"} MDB
+        %li
+          %a{:target => "_blank", :href => "http://github.com/mdb/times_grapher"} Source Code
