@@ -5,6 +5,7 @@ require 'sass'
 require 'Haml'
 require 'json'
 require 'net/http'
+require 'date'
 
 get '/' do
   if params[:search1]
@@ -110,5 +111,13 @@ helpers do
 
   def capitalize(string)
     return string.to_s.split(" ").each { |word| word.capitalize! }.join(" ")
-  end    
+  end
+
+  def footer_class(params)
+    if params && params[:search1]
+      return "has-search"
+    else
+      return "no-search"
+    end
+  end
 end
