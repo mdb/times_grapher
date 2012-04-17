@@ -70,11 +70,23 @@ TG.articles = (function ($) {
         url: settings.url,
         success: function(data) {
           $(settings.appendTo).append(data);
+          //_self.setUpHandlers();
         },
 
         error: function (data) {
           console.log(data);
         }
+      });
+    },
+
+    setUpHandlers: function() {
+      $('[data-role="articles-loader"]').live('click', function (evt) {
+        $(this).fadeOut();
+        TG.articles.load({
+          appendTo: $(this).closest('div.overlay'),
+          url: $(this).attr('data-ajax-url')
+        });
+        evt.preventDefault();
       });
     }
   };
