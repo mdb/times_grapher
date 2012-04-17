@@ -299,6 +299,22 @@ header {
   }
 }
 
+.overlay.about {
+  color: #313131;
+  width: 200px;
+  height: 175px;
+
+  p {
+    font-size: 14px;
+    margin-bottom: 15px;    
+    line-height: 18px;
+
+    a {
+      color: #313131;
+    }
+  }
+}
+
 footer {
   overflow: hidden;
   display: block;
@@ -323,6 +339,12 @@ footer {
     li {
       float: left;
       margin-right: 5px;
+      border-right: 1px solid $border_color;
+      padding-right: 5px;
+
+      &:last-child {
+        border-right: none;
+      }
 
       a {
        color: $text_color;
