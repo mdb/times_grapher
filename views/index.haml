@@ -8,13 +8,7 @@
     :javascript
       $(document).ready(function () {
         TG.overlay.init();
-        $('[data-role="articles-loader"]').live('click', function (evt) {
-          $(this).hide();
-          TG.articles.load({
-            appendTo: $(this).closest('div.overlay'),
-            url: $(this).attr('data-ajax-url')
-          });
-        });
+        TG.articles.setUpHandlers();
       });
   %body
     %header
