@@ -7,7 +7,8 @@
 }
 
 body {
-  padding: 10px;
+  height: 100%;
+  padding: 10px 0;
   background: $background_color;
   font-family: $primary_font_family;
   font-size: 16px;
@@ -60,6 +61,7 @@ header {
   width: 960px;
   margin: 0 auto;
   overflow: visible;
+  padding-bottom: 40px;
 
   form {
     padding: 30px;
@@ -293,6 +295,38 @@ header {
     &.secondary {
       border-top: 1px solid #ccc;
       padding-top: 25px;
+    }
+  }
+}
+
+footer {
+  overflow: hidden;
+  display: block;
+  position: absolute;
+  height: 40px;
+  font-size: 12px;
+  bottom: 0;
+  width: 100%;
+
+  &.has-search {
+    ul {
+      display: none; //temporary fix
+    }
+  }
+
+  ul {
+    border-top: 1px solid $border_color;
+    padding-top: 10px;
+    width: 960px;
+    margin: 0 auto;
+
+    li {
+      float: left;
+      margin-right: 5px;
+
+      a {
+       color: $text_color;
+      }
     }
   }
 }
