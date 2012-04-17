@@ -9,6 +9,7 @@
       $(document).ready(function () {
         TG.overlay.init();
         $('[data-role="articles-loader"]').live('click', function (evt) {
+          $(this).hide();
           TG.articles.load({
             appendTo: $(this).closest('div.overlay'),
             url: $(this).attr('data-ajax-url')
@@ -66,10 +67,11 @@
           %ul.articles
             -@full_data[1]['results'].each do |item|
               %li
-                %a{:href => item['url']}
-                  #{item['title']}
-                %time= "#{format_date(item['date'])}"
-                -if item['byline']
-                  %cite= "#{capitalize(item['byline'])}"
-                %p= "#{item['body']}..."
+                %h2
+                  %a{:href => item['url']}
+                    #{item['title']}
+                  -if item['byline']
+                    %cite= "#{capitalize(item['byline'])}"
+                  %time= "Published #{format_date(item['date'])}"
+                  %p= "#{item['body']}..."
     %div#overlay-mask
