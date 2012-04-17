@@ -290,5 +290,9 @@ header {
         margin-bottom: 0;
       }
     }
+    &.secondary {
+      border-top: 1px solid #ccc;
+      padding-top: 25px;
+    }
   }
 }
