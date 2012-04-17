@@ -64,10 +64,10 @@
                 %h2
                   %a{:href => item['url']}
                     #{item['title']}
-                  -if item['byline']
-                    %cite= "#{capitalize(item['byline'])}"
-                  %time= "Published #{format_date(item['date'])}"
-                  %p= "#{item['body']}..."
+                -if item['byline']
+                  %cite= "#{capitalize(item['byline'])}"
+                %time= "Published #{format_date(item['date'])}"
+                %p= "#{item['body']}..."
     %div.overlay.about
       %p
         TimesGrapher utilizes the
