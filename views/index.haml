@@ -53,13 +53,14 @@
           %ul.articles
             -@full_data[0]['results'].each do |item|
               %li
-                %a{:href => item['url']}
-                  #{item['title']}
-                %time= "#{format_date(item['date'])}"
+                %h2
+                  %a{:href => item['url']}
+                    #{item['title']}
                 -if item['byline']
                   %cite= "#{capitalize(item['byline'])}"
+                %time= "Published #{format_date(item['date'])}"
                 %p= "#{item['body']}..."
-            %li
+            %li{:class => 'load'}
               %a{:"data-role" => "articles-loader", :"data-ajax-url" => "/articles?search=#{params[:search1]}&offset=1", :class => "load-more", :href => "#"} Load more
         %div.search.search2.overlay
           %ul.articles

@@ -9,7 +9,7 @@
 body {
   padding: 10px;
   background: $background_color;
-  font-family: times, georgia, serif;
+  font-family: $primary_font_family;
   font-size: 16px;
   color: $text_color;
 
@@ -25,7 +25,7 @@ body {
     }
   }
 
-  cite {
+  cite, time {
     display: block;
   }
 
@@ -228,21 +228,67 @@ header {
   ul.articles {
 
     li {
-      margin-bottom: 10px;
+      margin-bottom: 25px;
+      color: #333;
 
       a {
-        color: #000;
-        display: block;
+        color: #313131;
       }
 
-      time {
-        font-style: italic;
+      h2 {
+        margin-bottom: 10px;
+
+        a {
+          color: #313131;
+          display: block;
+          text-decoration: none;
+
+          &:hover {
+            text-decoration: underline;
+          }
+        }
       }
 
       cite {
+        font-size: 12px;
         font-style: normal;
+        color: gray;
+        font-family: $secondary_font_family;
+      }
+
+      time {
+        font-size: 12px;
+        color: gray;
+        font-family: $secondary_font_family;
+        margin-bottom: 10px;
+      }
+
+      p {
+        line-height: 20px;
+        font-size: 15px;
+      }
+
+      a.load-more {
+        background: #888;
+        color: #fff;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        padding: 10px;
+        font-size: 14px;
+
+        &:after {
+          content: '...';
+        }
+
+        &:hover {
+          background: #000;
+        }
+      }
+
+      &.load {
+        margin-bottom: 0;
       }
     }
-    
   }
 }
