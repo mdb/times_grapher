@@ -100,6 +100,8 @@
                   %cite= "#{capitalize(item['byline'])}"
                 %time= "Published #{format_date(item['date'])}"
                 %p= "#{item['body']}..."
+            %li{:class => 'load'}
+              %a{:"data-role" => "articles-loader", :"data-ajax-url" => "/articles?search=#{params[:search2]}&offset=1", :class => "load-more", :href => "#"} Load more
     %div.overlay.about
       %p
         TimesGrapher utilizes the
@@ -114,7 +116,6 @@
       %p
         View its source code on
         %a{:target => "_blank", :href => "http://github.com/mdb/times_grapher"} Github.
-
       %p
         &copy; 2012
         %a{:target => "_blank", :href => "http://mikeball.us"} MDB
