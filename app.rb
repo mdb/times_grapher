@@ -103,7 +103,7 @@ helpers do
   def get_percent(num, total)
     if num != nil && total != nil
       if num == 0 || total == 0
-        return nil
+        return 0
       else
         return (100 * num)/total
       end
