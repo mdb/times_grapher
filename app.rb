@@ -13,6 +13,7 @@ get '/' do
     @totals = get_totals(@full_data)
     @queries = get_queries(params)
     @overall_total = @totals.inject(:+)
+    @year = params[:year] ? params[:year] : 'foo'
   end
 
   haml:index
@@ -49,12 +50,27 @@ end
 
 def get_data(params)
   data_array = []
+  year = params[:year] ? params[:year] : 2011
   for i in 1...3
     search_param = "search".concat(i.to_s).to_sym
-    data = get_json(params[search_param])
+    data = get_json(params[search_param], {
+      :begin_date => get_begin_date(params[:year]),
+      :end_date => get_end_date(params[:year])})
     data_array.push data
   end
   return data_array
+end
+
+def get_begin_date(year)
+  if year
+    return year.to_s + '0101'
+  end
+end
+
+def get_end_date(year)
+  if year
+    return year.to_s + '1231'
+  end
 end
 
 def get_json(query, options = {})
