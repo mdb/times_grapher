@@ -22,9 +22,9 @@
           %input{:type => 'text', :name => 'search1', :placeholder => 'Enter a topic', :value => params[:search1]}
           %input{:type => 'text', :name => 'search2', :placeholder => 'Enter a second topic', :value => params[:search2]}
           %select{:name => "year"}
-            - 2011.downto(1981) |i|
-              %option{:value => i} #{i}
-          %input{:type => 'submit'}
+            -(2011).downto(1981) do |i|
+              %option{:value => "#{i}"} #{i}
+          %input{:type => 'submit', :value => 'Submit'}
           %a{:href => '/', :class => 'clear'} clear
       -if params[:search1]
         %h2= "In <em>#{@year}</em>, the New York Times published <em>#{format_num(@overall_total)} articles</em> containing <em>#{@queries[0]}</em> or <em>#{@queries[1]}</em>."
