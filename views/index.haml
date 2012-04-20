@@ -23,7 +23,10 @@
           %input{:type => 'text', :name => 'search2', :placeholder => 'Enter a second topic', :value => params[:search2]}
           %select{:name => "year"}
             -(2011).downto(1981) do |i|
-              %option{:value => "#{i}"} #{i}
+              -if "#{i}" == "#{@year}"
+                %option{:value => "#{i}", :selected => 'selected'} #{i}
+              -else
+                %option{:value => "#{i}"} #{i}
           %input{:type => 'submit', :value => 'Submit'}
           %a{:href => '/', :class => 'clear'} clear
       -if params[:search1]
