@@ -336,9 +336,8 @@ footer {
   width: 100%;
 
   &.has-search {
-    ul {
-      display: none; //temporary fix
-    }
+    position: static;
+    margin-top: 60px;
   }
 
   ul {
