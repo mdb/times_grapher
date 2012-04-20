@@ -90,6 +90,16 @@ header {
     }
 
     a.clear {
+      background: $background_color;
+      border: 1px solid $border_color;
+      padding: 7px;
+      text-decoration: none;
+      font-size: 14px;
+      width: 90px;
+      text-align: center;
+    }
+
+    a.clear {
       color: $text_color;
       margin-left: 3px;
     }
