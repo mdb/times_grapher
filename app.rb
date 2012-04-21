@@ -140,4 +140,8 @@ helpers do
       return "no-search"
     end
   end
+
+  def partial(page, variables={})
+    haml page.to_sym, {layout:false}, variables
+  end
 end
