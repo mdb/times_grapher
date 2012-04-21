@@ -1,12 +1,1 @@
-%ul.articles.secondary
-  -@data['results'].each do |item|
-    %li
-      %h2
-        %a{:href => item['url']}
-          #{item['title']}
-      -if item['byline']
-        %cite= "By #{capitalize(item['byline'])}"
-      %time= "#{format_date(item['date'])}"
-      %p= "#{item['body']}..."
-  %li{:class=>'load'}
-    %a{:"data-role" => "articles-loader", :class => "load-more", :"data-ajax-url" => "/articles?search=#{params[:search]}&offset=#{params[:offset].to_i + 1}", :href => "#"} Load more
+= partial :article_list, search: true, results: @data['results'], class_name: 'seconday', class_name: 'secondary', offset: params[:offset].to_i + 1
