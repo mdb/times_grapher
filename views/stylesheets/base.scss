@@ -281,24 +281,6 @@ header {
         font-size: 15px;
       }
 
-      a.load-more {
-        background: #888;
-        color: #fff;
-        text-align: center;
-        text-decoration: none;
-        display: inline-block;
-        padding: 10px;
-        font-size: 14px;
-
-        &:after {
-          content: '...';
-        }
-
-        &:hover {
-          background: #000;
-        }
-      }
-
       &.load {
         margin-bottom: 0;
       }
@@ -306,6 +288,23 @@ header {
     &.secondary {
       border-top: 1px solid #ccc;
       padding-top: 25px;
+    }
+  }
+  ul.articles li a.load-more, a.load-more {
+    background: #888;
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    padding: 10px;
+    font-size: 14px;
+
+    &:after {
+      content: '...';
+    }
+
+    &:hover {
+      background: #000;
     }
   }
 }
