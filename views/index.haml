@@ -51,31 +51,9 @@
                 #{format_num(factor)}
       -if params[:search1]
         %div.search.search1.overlay
-          %ul.articles
-            -@full_data[0]['results'].each do |item|
-              %li
-                %h2
-                  %a{:href => item['url']}
-                    #{item['title']}
-                -if item['byline']
-                  %cite= "#{capitalize(item['byline'])}"
-                %time= "Published #{format_date(item['date'])}"
-                %p= "#{item['body']}..."
-            %li{:class => 'load'}
-              %a{:"data-role" => "articles-loader", :"data-ajax-url" => "/articles?search=#{params[:search1]}&offset=1", :class => "load-more", :href => "#"} Load more
+          = partial :article_list, search: params[:search1], results: @full_data[0]['results'], class_name: '', offset: 0
         %div.search.search2.overlay
-          %ul.articles
-            -@full_data[1]['results'].each do |item|
-              %li
-                %h2
-                  %a{:href => item['url']}
-                    #{item['title']}
-                -if item['byline']
-                  %cite= "#{capitalize(item['byline'])}"
-                %time= "Published #{format_date(item['date'])}"
-                %p= "#{item['body']}..."
-            %li{:class => 'load'}
-              %a{:"data-role" => "articles-loader", :"data-ajax-url" => "/articles?search=#{params[:search2]}&offset=1", :class => "load-more", :href => "#"} Load more
+          = partial :article_list, search: params[:search2], results: @full_data[1]['results'], class_name: '', offset: 0
     %div.overlay.about
       %p
         TimesGrapher utilizes the
