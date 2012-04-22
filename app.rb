@@ -133,7 +133,7 @@ helpers do
     return string.to_s.split(" ").each { |word| word.capitalize! }.join(" ")
   end
 
-  def footer_class(params)
+  def body_class(params)
     if params && params[:search1]
       return "has-search"
     else

@@ -334,11 +334,6 @@ footer {
   bottom: 0;
   width: 100%;
 
-  &.has-search {
-    position: static;
-    margin-top: 60px;
-  }
-
   ul {
     border-top: 1px solid $border_color;
     padding-top: 10px;
@@ -360,4 +355,9 @@ footer {
       }
     }
   }
+}
+
+body.has-search footer {
+  position: static;
+  margin-top: 60px;
 }

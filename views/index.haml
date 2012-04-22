@@ -10,7 +10,7 @@
         TG.overlay.init();
         TG.articles.setUpHandlers();
       });
-  %body
+  %body{:class => body_class(params)}
     %header
       %h1
         %a{:href => '/'}
@@ -73,7 +73,7 @@
         &copy; 2012
         %a{:target => "_blank", :href => "http://mikeball.us"} MDB
     %div#overlay-mask
-    %footer{:class => "#{footer_class(params)}"}
+    %footer
       %ul
         %li
           &copy; 2012
