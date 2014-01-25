@@ -4,9 +4,9 @@ describe Article do
 
   subject { article }
 
-  let(:article) { described_class.new(hash) }
+  let(:article) { described_class.new(json_doc) }
 
-  let(:hash) {
+  let(:json_doc) {
     {
       :headline => {
         :main => 'some_headline'
@@ -17,7 +17,7 @@ describe Article do
       },
       :web_url => 'some_url',
       :snippet => 'some_snippet'
-    }
+    }.to_json
   }
 
   describe '#main_headline' do

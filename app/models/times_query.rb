@@ -21,8 +21,16 @@ class TimesQuery
     @response ||= api_query
   end
 
+  def status_code
+    response.code
+  end
+
   def results
-    JSON.parse(response.body)['response']['docs']
+    @results ||= JSON.parse(response.body)['response']['docs']
+  end
+
+  def articles
+    @articles ||= results.map { |result| Article.new(result.to_json) }
   end
 
   def begin_date

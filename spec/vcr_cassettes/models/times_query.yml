@@ -1,0 +1,144 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://api.nytimes.com/svc/search/v2/articlesearch.json?api-key=API_KEY&begin_date=20130101&end_date=20131231&facet_field=day_of_week&fq=bush
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - '*/*'
+      User-Agent:
+      - Ruby
+      Host:
+      - api.nytimes.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Mashery-Responder:
+      - prod-p-worker-atl-03.mashery.com
+      Server:
+      - nginx/1.4.1
+      Date:
+      - Sat, 25 Jan 2014 13:19:02 GMT
+      Content-Type:
+      - application/json; charset=UTF-8
+      Connection:
+      - keep-alive
+      Vary:
+      - Accept-Encoding
+      X-Powered-By:
+      - PHP/5.3.27
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Allow-Credentials:
+      - 'true'
+      X-Cached:
+      - MISS
+      Accept-Ranges:
+      - bytes
+      Content-Length:
+      - '13920'
+    body:
+      encoding: UTF-8
+      string: '{"response":{"meta":{"hits":3930,"time":2701,"offset":0},"docs":[{"web_url":"http:\/\/www.nytimes.com\/2013\/12\/31\/arts\/music\/albums-from-moon-honey-peter-walker-and-angola-soundtrack.html","snippet":"The
+        latest Angola Soundtrack compilation and music from Moon Honey and Peter Walker
+        are available.","lead_paragraph":"The latest Angola Soundtrack compilation
+        and music from Moon Honey and Peter Walker are available.","abstract":"Jon
+        Pareles reviews Moon Honey album, Hand-Painted Dream Photographs and Angola
+        Soundtrack 2: Hypnosis, Distortions and Other Sonic Innovations 1969-1978
+        compilation; Ben Ratliff reviews Has Anybody Seen Our Freedoms? recording
+        from Peter Walker.","print_page":"6","blog":[],"source":"The New York Times","multimedia":[{"width":190,"url":"images\/2013\/12\/31\/arts\/31NEWMUSIC1\/31NEWMUSIC1-thumbWide.jpg","height":126,"subtype":"wide","legacy":{"wide":"images\/2013\/12\/31\/arts\/31NEWMUSIC1\/31NEWMUSIC1-thumbWide.jpg","wideheight":"126","widewidth":"190"},"type":"image"},{"width":75,"url":"images\/2013\/12\/31\/arts\/31NEWMUSIC2\/31NEWMUSIC2-thumbStandard.jpg","height":75,"subtype":"thumbnail","legacy":{"thumbnailheight":"75","thumbnail":"images\/2013\/12\/31\/arts\/31NEWMUSIC2\/31NEWMUSIC2-thumbStandard.jpg","thumbnailwidth":"75"},"type":"image"}],"headline":{"main":"Albums
+        From Moon Honey, Peter Walker and Angola Soundtrack","content_kicker":"New
+        Music","kicker":"New Music"},"keywords":[{"rank":"3","is_major":"N","name":"persons","value":"Walker,
+        Peter (1937- )"},{"rank":"1","is_major":"Y","name":"subject","value":"Music"},{"rank":"2","is_major":"N","name":"organizations","value":"Moon
+        Honey (Music Group)"}],"pub_date":"2013-12-31T00:00:00Z","document_type":"article","news_desk":"Culture","section_name":"Arts","subsection_name":"Music","byline":{"contributor":"","person":[{"organization":"","role":"reported","firstname":"Jon","rank":1,"lastname":"PARELES"},{"organization":"","role":"reported","firstname":"Ben","rank":2,"lastname":"RATLIFF"}],"original":"By
+        JON PARELES and BEN RATLIFF"},"type_of_material":"Review","_id":"52c1f0e238f0d829ddebdf24","word_count":"1085"},{"web_url":"http:\/\/www.nytimes.com\/aponline\/2013\/12\/30\/us\/ap-us-texas-republicans-big-donors.html","snippet":"The
+        deaths this year of three major Texas Republican donors, including a billionaire
+        who died over the weekend, could signal a generational change for party kingmakers
+        in the nation''s largest GOP stronghold.","lead_paragraph":"The deaths this
+        year of three major Texas Republican donors, including a billionaire who died
+        over the weekend, could signal a generational change for party kingmakers
+        in the nation''s largest GOP stronghold.","abstract":null,"print_page":null,"blog":[],"source":"AP","multimedia":[],"headline":{"main":"Texas
+        Republicans Lose 3 Major Donors in 2013","print_headline":"Texas Republicans
+        Lose 3 Major Donors in 2013"},"keywords":[],"pub_date":"2013-12-30T16:45:17Z","document_type":"article","news_desk":"None","section_name":"U.S.","subsection_name":null,"byline":{"person":[],"original":"By
+        THE ASSOCIATED PRESS","organization":"THE ASSOCIATED PRESS"},"type_of_material":"News","_id":"52c1ea3438f0d829ddebdf16","word_count":"830"},{"web_url":"http:\/\/www.nytimes.com\/roomfordebate\/2013\/12\/30\/mayor-of-new-york-and-then-what\/","snippet":"Serving
+        as mayor of America\u2019s largest city seems like a stepping stone to national
+        office. It isn\u2019t. Why is the New York mayoralty a dead-end job?","lead_paragraph":"","abstract":"Serving
+        as mayor of America\u2019s largest city seems like a stepping stone to national
+        office. It isn\u2019t. Why is the New York mayoralty a dead-end job?","print_page":null,"blog":[],"source":"The
+        New York Times","multimedia":[],"headline":{"main":"Mayor of New York, and
+        Then What?","kicker":"Room For Debate"},"keywords":[{"rank":"1","name":"type_of_material","value":"News"}],"pub_date":"2013-12-30T14:00:00Z","document_type":"blogpost","news_desk":null,"section_name":"Opinion","subsection_name":"Room
+        For Debate","byline":null,"type_of_material":"Blog","_id":"52c226ca38f0d829ddebdf8d","word_count":"2899"},{"web_url":"http:\/\/www.nytimes.com\/aponline\/2013\/12\/30\/us\/politics\/ap-us-2016-presidential-checklist-topics.html","snippet":"Hillary
+        Clinton as couch potato didn''t last long. Was anyone surprised?","lead_paragraph":"Hillary
+        Clinton as couch potato didn''t last long. Was anyone surprised?","abstract":null,"print_page":null,"blog":[],"source":"AP","multimedia":[],"headline":{"main":"Who''s
+        Jumping Through Which Hoops for 2016","print_headline":"Who''s Jumping Through
+        Which Hoops for 2016"},"keywords":[],"pub_date":"2013-12-30T13:29:28Z","document_type":"article","news_desk":"None","section_name":"U.S.","subsection_name":"Politics","byline":{"person":[],"original":"By
+        THE ASSOCIATED PRESS","organization":"THE ASSOCIATED PRESS"},"type_of_material":"News","_id":"52c1bcb238f0d829ddebdea8","word_count":"4914"},{"web_url":"http:\/\/www.nytimes.com\/reuters\/2013\/12\/30\/us\/30reuters-southsudan-unrest.html","snippet":"Uganda''s
+        president said on Monday the nations of East Africa had agreed to move in
+        to defeat South Sudanese rebel leader Riek Machar if he rejected a ceasefire
+        offer, threatening to turn an outburst of ethnic fighting into a regional
+        conflict.","lead_paragraph":"Uganda''s president said on Monday the nations
+        of East Africa had agreed to move in to defeat South Sudanese rebel leader
+        Riek Machar if he rejected a ceasefire offer, threatening to turn an outburst
+        of ethnic fighting into a regional conflict.","abstract":null,"print_page":null,"blog":[],"source":"Reuters","multimedia":[],"headline":{"main":"Uganda
+        Says Region Ready to Take on, Defeat South Sudan Rebel Leader","print_headline":"Uganda
+        Says Region Ready to Take on, Defeat South Sudan Rebel Leader"},"keywords":[],"pub_date":"2013-12-30T06:02:35Z","document_type":"article","news_desk":"None","section_name":"U.S.","subsection_name":null,"byline":{"person":[],"original":"By
+        REUTERS","organization":"REUTERS"},"type_of_material":"News","_id":"52c1539738f0d82ddfa162c4","word_count":"1044"},{"web_url":"http:\/\/www.nytimes.com\/aponline\/2013\/12\/30\/us\/politics\/ap-us-obamas-year.html","snippet":"It
+        was a moment for Barack Obama to savor.","lead_paragraph":"It was a moment
+        for Barack Obama to savor.","abstract":null,"print_page":null,"blog":[],"source":"AP","multimedia":[],"headline":{"main":"Obama''s
+        Presidency Beset by Fits, Starts in Year 5","print_headline":"Obama''s Presidency
+        Beset by Fits, Starts in Year 5"},"keywords":[],"pub_date":"2013-12-30T02:36:50Z","document_type":"article","news_desk":"None","section_name":"U.S.","subsection_name":"Politics","byline":{"person":[],"original":"By
+        THE ASSOCIATED PRESS","organization":"THE ASSOCIATED PRESS"},"type_of_material":"News","_id":"52c1233638f0d82ddfa16269","word_count":"1877"},{"web_url":"http:\/\/www.nytimes.com\/aponline\/2013\/12\/30\/us\/ap-history.html","snippet":"Today
+        is Monday, Dec. 30, the 364th day of 2013. There is one day left in the year.","lead_paragraph":"Today
+        is Monday, Dec. 30, the 364th day of 2013. There is one day left in the year.","abstract":null,"print_page":null,"blog":[],"source":"AP","multimedia":[],"headline":{"main":"Today
+        in History","print_headline":"Today in History"},"keywords":[],"pub_date":"2013-12-30T00:00:19Z","document_type":"article","news_desk":"None","section_name":"U.S.","subsection_name":null,"byline":{"person":[],"original":"By
+        THE ASSOCIATED PRESS","organization":"THE ASSOCIATED PRESS"},"type_of_material":"News","_id":"52c0fecd38f0d82ddfa16226","word_count":"801"},{"web_url":"http:\/\/www.nytimes.com\/2013\/12\/30\/us\/obamas-tv-picks-anything-edgy-with-hints-of-reality.html","snippet":"Mr.
+        Obama is a big fan of \u201cHomeland\u201d and \u201cHouse of Cards,\u201d
+        as well as other shows whose subject matter echoes the daily strife of his
+        workday.","lead_paragraph":"Mr. Obama is a big fan of \u201cHomeland\u201d
+        and \u201cHouse of Cards,\u201d as well as other shows whose subject matter
+        echoes the daily strife of his workday.","abstract":"Pres Obama, by his own
+        accounts, is drawn in his spare time to television shows like HBO''s Game
+        of Thrones, Netflix''s House of Cards and AMC''s Breaking Bad; shows are the
+        kind of heavy, darkly TV drama that echoes the sadness and strife that make
+        up so much of his workday.","print_page":"11","blog":[],"source":"The New
+        York Times","multimedia":[{"width":190,"url":"images\/2013\/12\/30\/us\/SHOWS-2\/SHOWS-2-thumbWide.jpg","height":126,"subtype":"wide","legacy":{"wide":"images\/2013\/12\/30\/us\/SHOWS-2\/SHOWS-2-thumbWide.jpg","wideheight":"126","widewidth":"190"},"type":"image"},{"width":600,"url":"images\/2013\/12\/30\/us\/SHOWS-1\/SHOWS-1-articleLarge.jpg","height":373,"subtype":"xlarge","legacy":{"xlargewidth":"600","xlarge":"images\/2013\/12\/30\/us\/SHOWS-1\/SHOWS-1-articleLarge.jpg","xlargeheight":"373"},"type":"image"},{"width":75,"url":"images\/2013\/12\/30\/us\/SHOWS-1\/SHOWS-1-thumbStandard.jpg","height":75,"subtype":"thumbnail","legacy":{"thumbnailheight":"75","thumbnail":"images\/2013\/12\/30\/us\/SHOWS-1\/SHOWS-1-thumbStandard.jpg","thumbnailwidth":"75"},"type":"image"}],"headline":{"main":"Obama\u2019s
+        TV Picks: Anything Edgy, With Hints of Reality","print_headline":"Obama\u2019s
+        TV Picks: Anything Edgy, With Hints of Reality"},"keywords":[{"rank":"1","is_major":"N","name":"subject","value":"Presidents
+        and Presidency (US)"},{"rank":"3","is_major":"Y","name":"persons","value":"Obama,
+        Barack"},{"rank":"2","is_major":"Y","name":"subject","value":"Television"}],"pub_date":"2013-12-30T00:00:00Z","document_type":"article","news_desk":"National","section_name":"U.S.","subsection_name":"Politics","byline":{"contributor":"","person":[{"organization":"","role":"reported","firstname":"Michael","rank":1}],"original":"By
+        MICHAEL D. SHEAR"},"type_of_material":"News","_id":"52c0cd0638f0d82ddfa1618f","word_count":"1110"},{"web_url":"http:\/\/www.nytimes.com\/2013\/12\/30\/nyregion\/going-unseen-but-asking-the-tough-questions-for-almost-a-quarter-century-at-wnyc.html","snippet":"Come
+        autumn, Brian Lehrer will celebrate his 25th anniversary on WNYC, the public
+        radio station on which he hosts his namesake morning talk show.","lead_paragraph":"Come
+        autumn, Brian Lehrer will celebrate his 25th anniversary on WNYC, the public
+        radio station on which he hosts his namesake morning talk show.","abstract":"Clyde
+        Haberman Breaking Bread column features Brian Lehrer, who in 2014 will celebrate
+        his 25th anniversary on WNYC, the New York public radio station on which he
+        hosts his eponymous morning talk show.","print_page":"14","blog":[],"source":"The
+        New York Times","multimedia":[{"width":190,"url":"images\/2013\/12\/30\/nyregion\/Y-BREAD\/Y-BREAD-thumbWide.jpg","height":126,"subtype":"wide","legacy":{"wide":"images\/2013\/12\/30\/nyregion\/Y-BREAD\/Y-BREAD-thumbWide.jpg","wideheight":"126","widewidth":"190"},"type":"image"},{"width":600,"url":"images\/2013\/12\/30\/nyregion\/Y-BREAD\/Y-BREAD-articleLarge.jpg","height":393,"subtype":"xlarge","legacy":{"xlargewidth":"600","xlarge":"images\/2013\/12\/30\/nyregion\/Y-BREAD\/Y-BREAD-articleLarge.jpg","xlargeheight":"393"},"type":"image"},{"width":75,"url":"images\/2013\/12\/30\/nyregion\/Y-BREAD\/Y-BREAD-thumbStandard.jpg","height":75,"subtype":"thumbnail","legacy":{"thumbnailheight":"75","thumbnail":"images\/2013\/12\/30\/nyregion\/Y-BREAD\/Y-BREAD-thumbStandard.jpg","thumbnailwidth":"75"},"type":"image"}],"headline":{"main":"Going
+        Unseen, but Asking the Tough Questions for Almost a Quarter-Century at WNYC","content_kicker":"Breaking
+        Bread","kicker":"Breaking Bread","print_headline":"Asking Tough Questions,
+        Often While Unseen, for Almost a Quarter-Century"},"keywords":[{"rank":"5","is_major":"N","name":"subject","value":"Voice
+        and Speech"},{"rank":"3","is_major":"Y","name":"persons","value":"Lehrer,
+        Brian"},{"rank":"6","is_major":"N","name":"glocations","value":"New York City"},{"rank":"1","is_major":"Y","name":"organizations","value":"WNYC"},{"rank":"2","is_major":"N","name":"subject","value":"Public
+        Broadcasting"},{"rank":"4","is_major":"Y","name":"subject","value":"Radio"}],"pub_date":"2013-12-30T00:00:00Z","document_type":"article","news_desk":"Metro","section_name":"N.Y.
+        \/ Region","subsection_name":null,"byline":{"contributor":"","person":[{"organization":"","role":"reported","firstname":"Clyde","rank":1,"lastname":"HABERMAN"}],"original":"By
+        CLYDE HABERMAN"},"type_of_material":"News","_id":"52c0c88038f0d82ddfa1618a","word_count":"1177"},{"web_url":"http:\/\/www.nytimes.com\/aponline\/2013\/12\/29\/sports\/football\/ap-fbn-lions-vikings.html","snippet":"As
+        the Minnesota Vikings filed into their locker room at the Metrodome for the
+        last time, Leslie Frazier was there to greet them with a handshake and a hug.","lead_paragraph":"As
+        the Minnesota Vikings filed into their locker room at the Metrodome for the
+        last time, Leslie Frazier was there to greet them with a handshake and a hug.","abstract":null,"print_page":null,"blog":[],"source":"AP","multimedia":[],"headline":{"main":"Vikings
+        Leave Metrodome With Victory Over Lions","print_headline":"Vikings Leave Metrodome
+        With Victory Over Lions"},"keywords":[],"pub_date":"2013-12-29T16:16:35Z","document_type":"article","news_desk":"None","section_name":"Sports","subsection_name":"Pro
+        Football","byline":{"person":[],"original":"By THE ASSOCIATED PRESS","organization":"THE
+        ASSOCIATED PRESS"},"type_of_material":"News","_id":"52c0919538f0d82ddfa1612e","word_count":"785"}],"facets":{"day_of_week":{"_type":"terms","missing":20199,"total":15242877,"other":3557029,"terms":[{"term":"Sunday","count":3489791},{"term":"Thursday","count":2081678},{"term":"Friday","count":2062106},{"term":"Wednesday","count":2038186},{"term":"Tuesday","count":2014087}]}}},"status":"OK","copyright":"Copyright
+        (c) 2013 The New York Times Company.  All Rights Reserved."}'
+    http_version: 
+  recorded_at: Sat, 25 Jan 2014 13:19:02 GMT
+recorded_with: VCR 2.8.0

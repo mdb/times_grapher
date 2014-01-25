@@ -2,18 +2,19 @@ class TimesQueryCollection
   attr_reader :options
   attr_reader :query_terms
   attr_reader :year
+  attr_reader :items
 
-  def initialize(query_terms = [], options = {})
+  def initialize(query_terms = [], opts = {})
     @options = {
       :year => '2013',
       :offset => 0
-    }.merge(options)
+    }.merge(opts)
 
     @query_terms = query_terms
     @year = options[:year]
   end
 
   def items
-    @query_terms.each { |term| TimesQuery.new(term, @options) }
+    @items ||= @query_terms.map { |term| TimesQuery.new(term, @options) }
   end
 end
