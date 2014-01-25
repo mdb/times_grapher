@@ -34,8 +34,11 @@ end
 
 gem 'rspec-rails'
 gem 'pry'
-gem 'vcr'
-gem 'webmock'
+
+group :test do
+  gem 'vcr'
+  gem 'webmock'
+end
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
