@@ -1,27 +1,25 @@
 class Article
-  attr_reader :hash
-
-  def initialize(article_hash)
-    @hash = article_hash
+  def initialize(json_doc)
+    @json = JSON.parse(json_doc)
   end
 
   def main_headline
-    @hash[:headline][:main]
+    @json['headline']['main']
   end
 
   def url
-    @hash[:web_url]
+    @json['web_url']
   end
 
   def snippet
-    @hash[:snippet]
+    @json['snippet']
   end
 
   def pub_date
-    @hash[:pub_date]
+    @json['pub_date']
   end
 
   def original_byline
-    @hash[:byline][:original]
+    @json['byline']['original']
   end
 end
