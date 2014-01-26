@@ -42,7 +42,8 @@ Teaspoon.setup do |config|
     # Available frameworks: teaspoon-jasmine, teaspoon-mocha, teaspoon-qunit
     #
     # Note: To use the CoffeeScript source files use `"teaspoon/mocha"` etc.
-    suite.javascripts = ["teaspoon-mocha"]
+    suite.javascripts = ["teaspoon-mocha", "support/expect"]
+
 
     # If you want to change how Teaspoon looks, or include your own stylesheets you can do that here. The default is the
     # stylesheet for the HTML reporter.
@@ -53,6 +54,8 @@ Teaspoon.setup do |config|
     suite.no_coverage = [%r{/lib/ruby/gems/}, %r{/vendor/assets/}, %r{/support/}, %r{/(.+)_helper.}]
     # suite.no_coverage << "jquery.min.js" # excludes jquery from coverage reports
 
+    # enable requirejs
+    suite.boot_partial = 'require_js'
   end
 
   # Example suite. Since we're just filtering to files already within the root spec/javascripts, these files will also
