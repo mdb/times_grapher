@@ -1,0 +1,38 @@
+@import 'variables';
+
+footer {
+  overflow: hidden;
+  display: block;
+  position: absolute;
+  height: 40px;
+  font-size: 12px;
+  bottom: 0;
+  width: 100%;
+
+  ul {
+    border-top: 1px solid $border_color;
+    padding-top: 10px;
+    width: 960px;
+    margin: 0 auto;
+
+    li {
+      float: left;
+      margin-right: 5px;
+      border-right: 1px solid $border_color;
+      padding-right: 5px;
+
+      &:last-child {
+        border-right: none;
+      }
+
+      a {
+       color: $text_color;
+      }
+    }
+  }
+}
+
+body.has-search footer {
+  position: static;
+  margin-top: 60px;
+}

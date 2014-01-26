@@ -1,0 +1,23 @@
+@import 'variables';
+
+header {
+  padding: 40px 0 20px 0;
+  width: 960px;
+  margin: 0 auto;
+
+  h1 {
+    a {
+      font-size: 22px;
+      font-weight: normal;
+      color: $highlight;
+      text-decoration: none;
+      line-height: 26px;
+
+      span {
+        display: block;
+        font-size: 18px;
+        color: $text_color;
+      }
+    }
+  }
+}

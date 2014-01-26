@@ -1,0 +1,72 @@
+@import 'variables';
+
+ul.articles {
+
+  li {
+    margin-bottom: 25px;
+    color: #333;
+
+    a {
+      color: #313131;
+    }
+
+    h2 {
+      margin-bottom: 10px;
+
+      a {
+        color: #313131;
+        display: block;
+        text-decoration: none;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+
+    cite {
+      font-size: 12px;
+      font-style: normal;
+      color: gray;
+      font-family: $secondary_font_family;
+    }
+
+    time {
+      font-size: 12px;
+      color: gray;
+      font-family: $secondary_font_family;
+      margin-bottom: 10px;
+    }
+
+    p {
+      line-height: 20px;
+      font-size: 15px;
+    }
+
+    &.load {
+      margin-bottom: 0;
+    }
+  }
+  &.secondary {
+    border-top: 1px solid #ccc;
+    padding-top: 25px;
+  }
+}
+
+ul.articles li a.load-more, a.load-more {
+  background: #888;
+  color: #fff;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  padding: 10px;
+  font-size: 14px;
+
+  &:after {
+    content: '...';
+  }
+
+  &:hover {
+    background: #000;
+  }
+}

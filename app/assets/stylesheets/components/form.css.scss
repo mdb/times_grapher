@@ -1,0 +1,44 @@
+@import 'variables';
+
+form {
+  padding: 30px;
+  margin-bottom: 30px;
+  border: 1px solid $border_color;
+
+  input {
+    background: $secondary_background;
+    border: 1px solid $border_color;
+    font-family: inherit;
+    font-size: 14px;
+    padding: 7px;
+    color: $highlight;
+    width: 25%;
+
+    &[type="submit"] {
+      color: $text_color;
+      width: 100px;
+      background: $background_color;
+      margin-left: 10px;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+
+  a.clear {
+    background: $background_color;
+    border: 1px solid $border_color;
+    padding: 7px;
+    text-decoration: none;
+    font-size: 14px;
+    width: 90px;
+    text-align: center;
+  }
+
+  a.clear {
+    color: $text_color;
+    margin-left: 3px;
+  }
+}
+
