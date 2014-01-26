@@ -29,9 +29,12 @@ group :test, :development do
   gem 'pry'
   gem 'rspec-rails'
   gem 'vcr'
-  gem 'webmock'
   gem 'phantomjs'
   gem 'teaspoon'
+end
+
+group :test do
+  gem 'webmock'
 end
 
 # Use ActiveModel has_secure_password
