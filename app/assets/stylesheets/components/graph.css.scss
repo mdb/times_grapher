@@ -1,34 +1,9 @@
 @import 'variables';
 
-ul.graphs {
-  display: none; //temporarily hiding this
-  list-style-type: none;
-
-  li {
-    background: $secondary_background;
-    height: 40px;
-    width: 100%;
-    margin-bottom: 10px;
-    line-height: 40px;
-    position: relative;
-
-    div {
-      background: $tertiary_background;
-      height: 40px;
-      position: absolute;
-    }
-
-    p {
-      padding-left: 10px;
-      color: $highlight;
-      position: absolute;
-    }
-  }
-}
-
 div.graph {
+  display: none;
   background: $secondary_background;
-  background:url('/images/dark-tile.png');
+  background: image-url('dark_tile.png');
   position: relative;
   height: 500px;
 
