@@ -11,4 +11,7 @@
 // about supported directives.
 //
 //= require jquery
+//= require lodash.underscore
+//= require backbone
+//= require require
 //= require_tree .
