@@ -1,0 +1,4 @@
+require.config({
+  <% if Rails.env == 'development' %>urlArgs: '_=' + (new Date()).getTime(),<% end %>
+  baseUrl: '<%= TimesGrapher::Application.config.assets.prefix %>'
+});
