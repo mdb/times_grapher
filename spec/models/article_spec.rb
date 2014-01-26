@@ -30,6 +30,26 @@ describe Article do
     subject { article.original_byline }
 
     it { should eq 'some_byline' }
+
+    context "when there is no 'byline' property in its JSON" do
+      let(:json_doc) {
+        {
+          foo: 'bar'
+        }.to_json
+      }
+
+      it { should eq nil }
+    end
+
+    context "when 'byline' is an empty array" do
+      let(:json_doc) {
+        {
+          byline: []
+        }.to_json
+      }
+
+      it { should eq nil }
+    end
   end
 
   describe '#url' do

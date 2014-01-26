@@ -20,6 +20,6 @@ class Article
   end
 
   def original_byline
-    @json['byline']['original']
+    @json['byline']['original'] unless @json['byline'].nil? || @json['byline'].empty?
   end
 end
