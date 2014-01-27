@@ -1,7 +1,7 @@
 require 'net/http'
 
 class TimesQuery
-  attr_reader :query_term
+  attr_reader :term
   attr_reader :year
   attr_reader :response
 
@@ -13,7 +13,7 @@ class TimesQuery
       :offset => 0
     }.merge(options)
 
-    @query_term = query_term
+    @term = query_term
     @year = options[:year]
   end
 
@@ -29,6 +29,10 @@ class TimesQuery
     @results ||= JSON.parse(response.body)['response']['docs']
   end
 
+  def hits
+    JSON.parse(response.body)['response']['meta']['hits']
+  end
+
   def articles
     @articles ||= results.map { |result| Article.new(result.to_json) }
   end
@@ -42,7 +46,7 @@ class TimesQuery
   end
 
   def url
-    "#{BASE_URL}fq=#{query_term}&facet_field=day_of_week&begin_date=#{begin_date}&end_date=#{end_date}&api-key=#{api_key}"
+    "#{BASE_URL}fq=#{term}&facet_field=day_of_week&begin_date=#{begin_date}&end_date=#{end_date}&api-key=#{api_key}"
   end
 
   private

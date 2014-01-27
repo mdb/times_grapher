@@ -10,8 +10,8 @@ describe TimesQuery do
 
   let(:times_query) { described_class.new('bush') }
 
-  describe '#query_term' do
-    subject { times_query.query_term }
+  describe '#erm' do
+    subject { times_query.term }
 
     it { should eq 'bush' }
   end
@@ -44,6 +44,14 @@ describe TimesQuery do
     it "reports the NY TIMES API response's status code" do
       VCR.use_cassette('models/times_query') do
         times_query.status_code.should eq '200'
+      end
+    end
+  end
+
+  describe '#hits' do
+    it "returns the number of articles returned by the query" do
+      VCR.use_cassette('models/times_query') do
+        times_query.hits.should eq 3930
       end
     end
   end
