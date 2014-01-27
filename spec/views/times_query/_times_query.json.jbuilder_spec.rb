@@ -4,7 +4,7 @@ describe 'times_query/_times_query' do
   let(:times_query) {
     double('TimesQuery',
       articles: [article],
-      query_term: 'some_query_term'
+      term: 'some_query_term'
     )
   }
 
