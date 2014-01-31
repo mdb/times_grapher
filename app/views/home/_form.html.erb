@@ -1,0 +1,12 @@
+<form>
+  <fieldset>
+    <input name='search1' placeholder='Enter a topic' type='text' />
+    <input name='search2' placeholder='Enter a second topic' type='text' />
+    <select name="year">
+      <% (2011).downto(1981) do |i| %>
+        <option value=<%= "#{i}" %>><%= "#{i}" %></option>
+      <% end %>
+    </select>
+    <input class="submit" type="submit" value="Submit" />
+  </fieldset>
+</form>
