@@ -4,7 +4,17 @@ describe 'times_query/_times_query' do
   let(:times_query) {
     double('TimesQuery',
       articles: [article],
-      term: 'some_query_term'
+      term: 'some_query_term',
+      hits: 'some_hits',
+      year: 'some_year'
+    )
+  }
+
+  let(:times_query_collection) {
+    double('TimesQueryCollection',
+      hits: 'some_collection_hits',
+      percent: 'some_percent',
+      factors: 'some_factors'
     )
   }
 
@@ -20,12 +30,19 @@ describe 'times_query/_times_query' do
 
   before :each do
     assign(:times_query, times_query)
-    render '/times_query/times_query', times_query: times_query
+    assign(:times_query_collection, times_query_collection)
+    render '/times_query/times_query', times_query: times_query, times_query_collection: times_query_collection
   end
 
   context 'verifying JSON values' do
     subject { JSON.parse(rendered) }
+
     its(['term']) { should eq 'some_query_term' }
+    its(['hits']) { should eq 'some_hits' }
+    its(['totalHits']) { should eq 'some_collection_hits' }
+    its(['percent']) { should eq 'some_percent' }
+    its(['factors']) { should eq 'some_factors' }
+    its(['year']) { should eq 'some_year' }
 
     context "the articles array it renders" do
       it "reports an articles array" do
