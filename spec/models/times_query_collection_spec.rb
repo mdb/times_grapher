@@ -53,4 +53,11 @@ describe TimesQueryCollection do
       end
     end
   end
+
+  describe "#factors" do
+    it "reports the percent of the total hits for the term it's passed" do
+      times_query_collection.stub(:hits).and_return 10
+      times_query_collection.factors(5).should eq [10, 8, 5, 3, 0]
+    end
+  end
 end

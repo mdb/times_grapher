@@ -25,4 +25,11 @@ class TimesQueryCollection
   def hits
     items.map { |item| item.hits }.inject(:+)
   end
+
+  def factors(divided_by)
+    divided_by -= 1
+    step = hits.fdiv divided_by
+
+    (0..divided_by).map { |i| (i * step).round }.reverse
+  end
 end
