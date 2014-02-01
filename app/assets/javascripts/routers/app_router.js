@@ -15,8 +15,6 @@ define('routers/app_router', [
   var AppRouter = Backbone.Router.extend({
     initialize: function () {
       if (!Backbone.History.started) Backbone.history.start({ pushState: true });
-      _.templateSettings.evaluate = /\{\{(.+?)\}\}/g;
-      _.templateSettings.interpolate = /\{\{=(.+?)\}\}/g;
       this.form = new FormView({router: this});
     },
 
