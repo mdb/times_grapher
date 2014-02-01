@@ -30,9 +30,9 @@ footer {
       }
     }
   }
-}
 
-body.has-search footer {
-  position: static;
-  margin-top: 60px;
+  &.has-search {
+    position: static;
+    margin-top: 60px;
+  }
 }
