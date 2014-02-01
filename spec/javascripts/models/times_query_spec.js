@@ -12,7 +12,7 @@ define('models/times_query_spec', [
     });
 
     it("is a Backbone model", function () {
-      expect(model instanceof Backbone.Model).to.be(true);
+      expect(model instanceof Backbone.Model).toEqual(true);
     });
   });
 });
