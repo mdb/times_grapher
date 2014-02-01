@@ -13,7 +13,7 @@ define('routers/app_router_spec', [
 
     describe(".routes", function () {
       it("properly routes search URLs", function () {
-        expect(router[':year/:termOne/:termTwo']).toEqual('renderGraph');
+        expect(router.routes[':year/:termOne/:termTwo']).toEqual('renderGraph');
       });
     });
   });
