@@ -9,9 +9,23 @@ define('collections/times_query', [
 ) {
 
   var TimesQueryCollection = Backbone.Collection.extend({
+    initialize: function (opts) {
+      this.terms = opts.terms;
+      this.year = opts.year;
+      this.fetch({ data: $.param({ terms: this.terms, year: this.year}) });
+    },
+
     url: '/query',
 
-    model: TimesQuery
+    model: TimesQuery,
+
+    hits: function () {
+      return this.models[0].get('totalHits');
+    },
+
+    factors: function () {
+      return this.models[0].get('factors');
+    },
   });
 
   return TimesQueryCollection;
