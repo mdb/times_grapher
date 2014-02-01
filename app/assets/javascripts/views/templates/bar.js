@@ -1,5 +1,9 @@
 define('views/templates/bar', [
+  'underscore',
+  'underscore_config'
 ], function(
+  _,
+  underscoreConfig
 ) {
 
   var template = [
