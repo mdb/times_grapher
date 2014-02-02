@@ -3,7 +3,7 @@
 div.graph {
   display: none;
   background: $secondary_background;
-  background: image-url('dark_tile.png');
+  background: asset-url('dark_tile.png');
   position: relative;
   height: 500px;
 
@@ -19,27 +19,27 @@ div.graph {
       text-align: center;
 
       &:before {
-          content: '';
-          width: 35px;
-          height: 100%;
-          position: absolute;
-          top: 25px;
-          right: -35px;
-          background-color: $secondary_background;
-          -webkit-transform: skewY(55deg);
-          -webkit-transform-origin: top;
+        content: '';
+        width: 35px;
+        height: 100%;
+        position: absolute;
+        top: 25px;
+        right: -35px;
+        background-color: $secondary_background;
+        -webkit-transform: skewY(55deg);
+        -webkit-transform-origin: top;
 
-          -moz-transform: skewY(55deg);
-          -moz-transform-origin: top;
+        -moz-transform: skewY(55deg);
+        -moz-transform-origin: top;
 
-          -ms-transform: skewY(55deg);
-          -ms-transform-origin: top;
+        -ms-transform: skewY(55deg);
+        -ms-transform-origin: top;
 
-          -o-transform: skewY(55deg);
-          -o-transform-origin: top;
+        -o-transform: skewY(55deg);
+        -o-transform-origin: top;
 
-          transform: skewY(55deg);
-          transform-origin: top;
+        transform: skewY(55deg);
+        transform-origin: top;
       }
 
       &.bar-0 {
