@@ -3,7 +3,7 @@
 div.graph {
   display: none;
   background: $secondary_background;
-  background: asset-url('dark_tile.png');
+  background: url(image-path('dark_tile.png'));
   position: relative;
   height: 500px;
 
