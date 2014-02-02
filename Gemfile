@@ -43,5 +43,6 @@ gem 'webmock', group: :test
 
 gem 'rails_12factor', group: :production
 gem 'unicorn'
+gem 'foreman'
 
 ruby "2.0.0"
