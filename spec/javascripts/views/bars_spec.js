@@ -53,13 +53,13 @@ define('views/bars_spec', [
           it("renders the first graph label", function () {
             expect($(items[0]).find('a').text()).toEqual('50');
             expect($(items[0]).attr('style')).toEqual('height: 50%;');
-            expect($(items[0]).attr('class')).toEqual('bar-0');
+            expect($(items[0]).attr('class')).toEqual('bar bar-0');
           });
 
           it("renders the second bar", function () {
             expect($(items[1]).find('a').text()).toEqual('40');
             expect($(items[1]).attr('style')).toEqual('height: 25%;');
-            expect($(items[1]).attr('class')).toEqual('bar-1');
+            expect($(items[1]).attr('class')).toEqual('bar bar-1');
           });
         });
       });

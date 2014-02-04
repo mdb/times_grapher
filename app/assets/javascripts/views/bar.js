@@ -1,11 +1,11 @@
 define('views/bar', [
   'views/templates/bar',
-  'views/articles_modal',
+  'views/modal',
   'underscore',
   'backbone'
 ], function(
   BarTemplate,
-  ArticlesModal,
+  Modal,
   _,
   Backbone
 ) {
@@ -16,13 +16,9 @@ define('views/bar', [
       this.template = BarTemplate;
     },
 
-    el: 'li.bar',
-
-    events: {
-      'click a': 'renderModal'
-    },
-
     render: function () {
+      this.renderModal();
+
       return this.template({
         term: this.model.get('term'),
         percent: this.model.get('percent'),
@@ -32,10 +28,11 @@ define('views/bar', [
     },
 
     renderModal: function () {
-      alert('here')
-      this.articles = new ArticlesModal();
-      this.articles.render();
-      ARTICLES = this.articles
+      this.modal = new Modal({
+        model: this.model
+      });
+
+      this.modal.render();
     }
   });
 

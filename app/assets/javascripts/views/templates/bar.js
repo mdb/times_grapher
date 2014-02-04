@@ -7,8 +7,8 @@ define('views/templates/bar', [
 ) {
 
   var template = [
-    '<li class="bar-{{= index }}" style="height: {{= percent }}%;">',
-      '<a href="#" title="Browse articles">{{= count}}</a>',
+    '<li class="bar bar-{{= index }}" style="height: {{= percent }}%;">',
+      '<a href="#modal-{{= term }}" title="Browse articles">{{= count}}</a>',
     '</li>'
   ];
 
