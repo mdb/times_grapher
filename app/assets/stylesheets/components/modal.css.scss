@@ -1,3 +1,6 @@
+@import 'variables';
+@import 'compass';
+
 .modal {
   position: fixed;
   top: 0;
@@ -7,9 +10,9 @@
   background: rgba(0,0,0,0.8);
   z-index: 99999;
   opacity: 0;
-  -webkit-transition: opacity 400ms ease-in;
-  -moz-transition: opacity 400ms ease-in;
-  transition: opacity 400ms ease-in;
+  @include transition-property(opacity);
+  @include transition-duration(400ms);
+  @include transition-timing-function(ease-in);
   pointer-events: none;
 
   &:target {
@@ -19,16 +22,18 @@
 
   div {
     width: 650px;
+    height: 80%;
     position: relative;
-    margin: 10% auto;
+    margin: 5% auto;
     padding: 20px;
-    border: 7px solid #888;
+    border: 7px solid $border_color;
     background: #fff;
+    overflow: auto;
 
     .close {
-      font-family: arial, helvetica, sans-serif;
-      background: #555;
-      color: #fff;
+      font-family: $secondary_font_family;
+      background: $border_color;
+      color: $link_color;
       line-height: 30px;
       position: absolute;
       right: -7px;
