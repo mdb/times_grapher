@@ -10,7 +10,7 @@ define('views/templates/modal', [
     '<div class="modal" id="modal-{{= term }}">',
       '<div>',
         '<a class="close" href="#">x</a>',
-        '<ul class="articles"></ul>',
+        '<ul class="articles-{{= term }} articles"></ul>',
       '</div>',
     '</div>'
   ];

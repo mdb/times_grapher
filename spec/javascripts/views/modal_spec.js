@@ -1,9 +1,11 @@
 define('views/modal_spec', [
   'views/modal',
-  'models/times_query'
+  'models/times_query',
+  'views/articles'
 ], function(
   ModalView,
-  TimesQuery
+  TimesQuery,
+  ArticlesView
 ) {
 
   describe("ModalView", function () {
@@ -40,7 +42,7 @@ define('views/modal_spec', [
         });
 
         it("contains an articles list", function () {
-          expect(template.find('ul.articles').length).toEqual(1);
+          expect(template.find('ul').attr('class')).toEqual('articles-foo articles');
         });
       });
     });
@@ -53,11 +55,37 @@ define('views/modal_spec', [
 
     describe("#render", function () {
       beforeEach(function () {
+        spyOn(modal, 'renderArticles');
         modal.render();
       });
 
       it("appends the template to the modal container", function () {
         expect($('.modal-container').html()).toEqual(modal.template);
+      });
+
+      it("renders the articles list", function () {
+        expect(modal.renderArticles).toHaveBeenCalled();
+      });
+    });
+
+    describe("#renderArticles", function () {
+      beforeEach(function () {
+        spyOn(ArticlesView.prototype, 'render');
+        modal.renderArticles();
+      });
+
+      describe("the '.articles' property it declares on the modal", function () {
+        it("is an instance of an ArticlesView", function () {
+          expect(modal.articles instanceof ArticlesView).toEqual(true);
+        });
+
+        it("is instantiated with the modal's model", function () {
+          expect(modal.articles.model).toEqual(modal.model);
+        });
+      });
+
+      it("renders the articles view", function () {
+        expect(ArticlesView.prototype.render).toHaveBeenCalled();
       });
     });
   });

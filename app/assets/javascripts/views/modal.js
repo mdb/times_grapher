@@ -1,9 +1,11 @@
 define('views/modal', [
   'views/templates/modal',
+  'views/articles',
   'underscore',
   'backbone'
 ], function(
   ModalTemplate,
+  ArticlesView,
   _,
   Backbone
 ) {
@@ -21,6 +23,15 @@ define('views/modal', [
 
     render: function () {
       this.modalContainer().append(this.template);
+      this.renderArticles();
+    },
+
+    renderArticles: function () {
+      this.articles = new ArticlesView({
+        model: this.model
+      });
+
+      this.articles.render();
     }
   });
 
