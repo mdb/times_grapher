@@ -31,7 +31,7 @@ define('views/y_axis_spec', [
     });
 
     afterEach(function () {
-      $('ul.bars').remove();
+      $('ul.y-axis').remove();
     });
 
     describe("#render", function () {

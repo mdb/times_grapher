@@ -19,6 +19,10 @@ define('views/modal_spec', [
       });
     });
 
+    afterEach(function () {
+      $('.modal-container').remove();
+    });
+
     describe("#initialize", function () {
       it("properly sets a template property on instantiation of a ModalView instance", function () {
         expect(modal.template).toBeDefined();
