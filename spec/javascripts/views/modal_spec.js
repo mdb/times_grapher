@@ -79,8 +79,8 @@ define('views/modal_spec', [
           expect(modal.articles instanceof ArticlesView).toEqual(true);
         });
 
-        it("is instantiated with the modal's model", function () {
-          expect(modal.articles.model).toEqual(modal.model);
+        it("is instantiated with the modal's articles collection", function () {
+          expect(modal.articles.collection).toEqual(modal.articlesCollection);
         });
       });
 

@@ -1,11 +1,13 @@
 define('views/modal', [
   'views/templates/modal',
   'views/articles',
+  'collections/articles',
   'underscore',
   'backbone'
 ], function(
   ModalTemplate,
   ArticlesView,
+  ArticlesCollection,
   _,
   Backbone
 ) {
@@ -27,8 +29,12 @@ define('views/modal', [
     },
 
     renderArticles: function () {
+      this.articlesCollection = new ArticlesCollection(this.model.get('articles'), {
+        term: this.model.get('term')
+      });
+
       this.articles = new ArticlesView({
-        model: this.model
+        collection: this.articlesCollection
       });
 
       this.articles.render();

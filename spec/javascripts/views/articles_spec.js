@@ -1,32 +1,30 @@
 define('views/articles_spec', [
   'views/articles',
-  'models/times_query',
-  'collections/times_query'
+  'models/article',
+  'collections/articles'
 ], function(
   ArticlesView,
-  TimesQuery,
-  TimesQueryCollection
+  Article,
+  ArticlesCollection
 ) {
 
   describe("ArticlesView", function () {
     var articles;
 
     beforeEach(function () {
-      var model = new TimesQuery({
-        term: 'foo',
-        percent: '50',
-        hits: '50',
-        articles: [{
-          title: 'title',
-          url: 'url',
-          datePublished: 'datePublished',
-          byline: 'byline',
-          snippet: 'snippet'
-        }]
-      });
+      var model = new Article({
+            title: 'title',
+            url: 'url',
+            datePublished: 'datePublished',
+            byline: 'byline',
+            snippet: 'snippet'
+          }),
+          collection = new ArticlesCollection([model], {
+            term: 'foo'
+          });
 
       $('body').append('<ul class="articles-foo"></ul>');
-      articles = new ArticlesView({model: model});
+      articles = new ArticlesView({collection: collection});
     });
 
     afterEach(function () {
