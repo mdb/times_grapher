@@ -6,7 +6,10 @@ describe 'times_query/_times_query' do
       articles: [article],
       term: 'some_query_term',
       hits: 'some_hits',
-      year: 'some_year'
+      year: 'some_year',
+      options: {
+        page: '1'
+      }
     )
   }
 
@@ -43,6 +46,7 @@ describe 'times_query/_times_query' do
     its(['percent']) { should eq 'some_percent' }
     its(['factors']) { should eq 'some_factors' }
     its(['year']) { should eq 'some_year' }
+    its(['pageOffset']) { should eq '1' }
 
     context "the articles array it renders" do
       it "reports an articles array" do
