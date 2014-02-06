@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://api.nytimes.com/svc/search/v2/articlesearch.json?api-key=API_KEY&begin_date=20130101&end_date=20131231&facet_field=day_of_week&fq=bush
+    uri: http://api.nytimes.com/svc/search/v2/articlesearch.json?api-key=API_KEY&begin_date=20130101&end_date=20131231&facet_field=day_of_week&fq=bush&page=0
     body:
       encoding: US-ASCII
       string: ''

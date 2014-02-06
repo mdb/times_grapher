@@ -54,7 +54,7 @@ describe TimesQuery do
   describe '#url' do
     subject { times_query.url }
 
-    it { should eq 'http://api.nytimes.com/svc/search/v2/articlesearch.json?fq=bush&facet_field=day_of_week&begin_date=20130101&end_date=20131231&api-key=API_KEY' }
+    it { should eq 'http://api.nytimes.com/svc/search/v2/articlesearch.json?fq=bush&facet_field=day_of_week&begin_date=20130101&end_date=20131231&page=0&api-key=API_KEY' }
   end
 
   describe '#status_code' do
