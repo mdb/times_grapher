@@ -10,6 +10,23 @@ describe TimesQuery do
 
   let(:times_query) { described_class.new('bush') }
 
+  describe '#options' do
+    subject { times_query.options }
+
+    context "default values" do
+      its [:page] { should eq 0 }
+      its [:year] { should eq '2013' }
+    end
+
+    context "when the TimesQuery is instantiated with non-default options" do
+      let(:times_query_two) { described_class.new('bush', year: '2010', page: 2) }
+      subject {times_query_two.options }
+
+      its [:page] { should eq 2 }
+      its [:year] { should eq '2010' }
+    end
+  end
+
   describe '#term' do
     subject { times_query.term }
 

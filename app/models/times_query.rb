@@ -1,20 +1,18 @@
 require 'net/http'
 
 class TimesQuery
-  attr_reader :term
-  attr_reader :year
-  attr_reader :response
+  attr_reader :options, :term, :year, :response
 
   BASE_URL = 'http://api.nytimes.com/svc/search/v2/articlesearch.json?'
 
   def initialize(query_term, options = {})
-    options = {
+    @options = {
       :year => '2013',
-      :offset => 0
+      :page => 0
     }.merge(options)
 
     @term = query_term
-    @year = options[:year]
+    @year = @options[:year]
   end
 
   def response
