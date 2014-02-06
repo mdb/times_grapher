@@ -10,7 +10,7 @@ describe TimesQuery do
 
   let(:times_query) { described_class.new('bush') }
 
-  describe '#erm' do
+  describe '#term' do
     subject { times_query.term }
 
     it { should eq 'bush' }
