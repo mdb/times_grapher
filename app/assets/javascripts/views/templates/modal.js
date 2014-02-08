@@ -11,6 +11,7 @@ define('views/templates/modal', [
       '<div>',
         '<a class="close" href="#">x</a>',
         '<ul class="articles-{{= term }} articles"></ul>',
+        '<button>Load more</button>',
       '</div>',
     '</div>'
   ];

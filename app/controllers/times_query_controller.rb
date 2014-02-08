@@ -3,8 +3,9 @@ class TimesQueryController < ApplicationController
 
   def index
     year = params[:year] ? params[:year] : '2014'
+    page = params[:page] ? params[:page] : '0'
 
-    @times_query_collection = TimesQueryCollection.new([params[:terms]].flatten, :year => year)
+    @times_query_collection = TimesQueryCollection.new([params[:terms]].flatten, year: year, page: page)
   end
 
   private
