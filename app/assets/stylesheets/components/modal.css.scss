@@ -42,5 +42,21 @@
       width: 30px;
       text-decoration: none;
     }
+
+    button {
+      background: $border_color;
+      display: block;
+      margin: 0 auto;
+      border: none;
+      color: #fff;
+      font-size: 18px;
+      padding: 10px;
+      font-family: $primary_font_family;
+      font-weight: normal;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
   }
 }
