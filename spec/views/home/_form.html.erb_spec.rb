@@ -25,7 +25,7 @@ describe "home/_form.html.erb" do
     rendered.should have_selector "form select[name=year]"
   end
 
-  it "renders a 2011 - 1981 options selectors" do
+  it "renders a 2013 - 1981 options selectors" do
     rendered.should have_selector "option"
   end
 
