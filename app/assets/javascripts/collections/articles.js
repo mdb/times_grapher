@@ -11,9 +11,10 @@ define('collections/articles', [
   var ArticlesCollection = Backbone.Collection.extend({
     initialize: function (models, opts) {
       this.term = opts.term;
-      this.pageOffset = 0;
       this.year = opts.year;
     },
+
+    pageOffset: 0,
 
     model: Article,
 
