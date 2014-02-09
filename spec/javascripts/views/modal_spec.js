@@ -1,10 +1,12 @@
 define('views/modal_spec', [
   'views/modal',
   'models/times_query',
+  'collections/articles',
   'views/articles'
 ], function(
   ModalView,
   TimesQuery,
+  ArticlesCollection,
   ArticlesView
 ) {
 
@@ -26,6 +28,18 @@ define('views/modal_spec', [
     describe("#initialize", function () {
       it("properly sets a template property on instantiation of a ModalView instance", function () {
         expect(modal.template).toBeDefined();
+      });
+    });
+
+    describe("#elSelector", function () {
+      it("returns the proper jQuery selector string to use in setting the modal instance's $el", function () {
+        expect(modal.elSelector()).toEqual('#modal-foo');
+      });
+    });
+
+    describe(".events", function () {
+      it("binds click of the 'Load More' button to load more articles", function () {
+        expect(modal.events['click button']).toEqual('loadMore');
       });
     });
 
@@ -70,6 +84,10 @@ define('views/modal_spec', [
       it("renders the articles list", function () {
         expect(modal.renderArticles).toHaveBeenCalled();
       });
+
+      it("properly sets the modal's $el", function () {
+        expect(modal.$el).toEqual($('#modal-foo'));
+      });
     });
 
     describe("#renderArticles", function () {
@@ -90,6 +108,20 @@ define('views/modal_spec', [
 
       it("renders the articles view", function () {
         expect(ArticlesView.prototype.render).toHaveBeenCalled();
+      });
+    });
+
+    describe("#setUpArticles", function () {
+      it("sets up an articles view on the modal instance", function () {
+        expect(modal.articles).toBeUndefined();
+        modal.setUpArticles();
+        expect(modal.articles instanceof ArticlesView).toEqual(true);
+      });
+
+      it("sets up an articles collection on the modal instance", function () {
+        expect(modal.articlesCollection).toBeUndefined();
+        modal.setUpArticles();
+        expect(modal.articlesCollection instanceof ArticlesCollection).toEqual(true);
       });
     });
   });
