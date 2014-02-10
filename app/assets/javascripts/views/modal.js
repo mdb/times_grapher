@@ -15,12 +15,12 @@ define('views/modal', [
   var Modal = Backbone.View.extend({
     initialize: function (opts) {
       this.template = ModalTemplate({
-        term: this.model.get('term')
+        hyphenatedTerm: this.model.hyphenatedTerm()
       });
     },
 
     elSelector: function () {
-      return '#modal-' + this.model.get('term');
+      return '#modal-' + this.model.hyphenatedTerm();
     },
 
     events: {

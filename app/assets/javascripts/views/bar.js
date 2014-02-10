@@ -20,7 +20,7 @@ define('views/bar', [
       this.renderModal();
 
       return this.template({
-        term: this.model.get('term'),
+        hyphenatedTerm: this.model.hyphenatedTerm(),
         percent: this.model.get('percent'),
         index: this.index,
         count: this.model.get('hits')

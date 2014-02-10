@@ -12,7 +12,7 @@ define('views/articles', [
 
   var ArticlesView = Backbone.View.extend({
     el: function () {
-      return '.articles-' + this.collection.term;
+      return '.articles-' + this.collection.term.replace(' ', '-');
     },
 
     render: function () {
