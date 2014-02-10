@@ -44,10 +44,25 @@ class TimesQuery
   end
 
   def url
-    "#{BASE_URL}fq=#{term}&facet_field=day_of_week&begin_date=#{begin_date}&end_date=#{end_date}&page=#{options[:page]}&api-key=#{api_key}"
+    "#{BASE_URL}#{query_params}"
   end
 
   private
+
+  def query_params
+    URI.escape(query_values.collect { |key, val| "#{key}=#{val}" }.join('&'))
+  end
+
+  def query_values
+    {
+      fq: term,
+      facet_field: 'day_of_week',
+      begin_date: begin_date,
+      end_date: end_date,
+      page: options[:page],
+      'api-key' => api_key
+    }
+  end
 
   def api_query
     Net::HTTP.get_response(URI.parse(url))

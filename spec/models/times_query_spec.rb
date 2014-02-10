@@ -55,6 +55,13 @@ describe TimesQuery do
     subject { times_query.url }
 
     it { should eq 'http://api.nytimes.com/svc/search/v2/articlesearch.json?fq=bush&facet_field=day_of_week&begin_date=20130101&end_date=20131231&page=0&api-key=API_KEY' }
+
+    context 'the term has a space' do
+      let(:times_query_with_space) { described_class.new('george bush') }
+      subject {times_query_with_space.url }
+
+      it { should eq 'http://api.nytimes.com/svc/search/v2/articlesearch.json?fq=george%20bush&facet_field=day_of_week&begin_date=20130101&end_date=20131231&page=0&api-key=API_KEY' }
+    end
   end
 
   describe '#status_code' do
