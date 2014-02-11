@@ -82,5 +82,14 @@ define('views/form_spec', [
         expect(form.queryUrl()).toEqual('2014/foo bar/baz bim');
       });
     });
+
+    describe("#populateInputs", function () {
+      it("populates the text inputs based on the URL path fragments", function () {
+        spyOn(Backbone.history, 'getFragment').andReturn('2013/bush/gore');
+        form.populateInputs();
+        expect(form.termOne()).toEqual('bush');
+        expect(form.termTwo()).toEqual('gore');
+      });
+    });
   });
 });
