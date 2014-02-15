@@ -30,6 +30,30 @@
     background: #fff;
     overflow: auto;
 
+    &.about {
+      height: 225px;
+      width: 450px;
+      overflow-y: hidden;
+      overflow-x: hidden;
+    }
+
+    h1 {
+      color: #313131;
+      font-weight: normal;
+      margin-bottom: 20px;
+    }
+
+    a {
+      color: #313131;
+    }
+
+    p {
+      color: #313131;
+      line-height: 20px;
+      font-size: 15px;
+      margin-bottom: 15px;
+    }
+
     .close {
       font-family: $secondary_font_family;
       background: $border_color;
