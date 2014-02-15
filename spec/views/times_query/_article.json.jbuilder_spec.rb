@@ -5,7 +5,7 @@ describe 'times_query/_article' do
     double('Article',
       main_headline: 'main_headline',
       url: 'some_url',
-      pub_date: 'some_pub_date',
+      pretty_pub_date: 'some_pub_date',
       snippet: 'some_snippet',
       original_byline: 'some_original_byline'
     )
