@@ -44,8 +44,12 @@ define('views/form_spec', [
     });
 
     describe(".events", function () {
-      it("maps click of the submit button to navigate", function () {
-        expect(form.events['click .submit']).toEqual('navigate');
+      it("binds click of the submit button to navigate", function () {
+        expect(form.events['submit']).toEqual('navigate');
+      });
+
+      it("binds change of the year option selector to navigate", function () {
+        expect(form.events['change select']).toEqual('navigate');
       });
     });
 

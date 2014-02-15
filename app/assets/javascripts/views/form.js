@@ -19,7 +19,8 @@ define('views/form', [
     },
 
     events: {
-      'click .submit': 'navigate'
+      'submit': 'navigate',
+      'change select': 'navigate'
     },
 
     year: function () {

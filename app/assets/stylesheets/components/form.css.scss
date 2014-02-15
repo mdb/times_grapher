@@ -19,6 +19,8 @@ form {
       width: 100px;
       background: $background_color;
       margin-left: 10px;
+      position: absolute;
+      left: 5000px;
 
       &:hover {
         cursor: pointer;
