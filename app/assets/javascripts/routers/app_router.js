@@ -16,10 +16,15 @@ define('routers/app_router', [
     initialize: function () {
       if (!Backbone.History.started) Backbone.history.start({ pushState: true });
       this.form = new FormView({router: this});
+      this.bind('all', this.dispatch);
     },
 
     routes: {
       ':year/:termOne/:termTwo': 'renderGraph'
+    },
+
+    dispatch: function () {
+      $(document).trigger('routeChange');
     },
 
     renderGraph: function (year, termOne, termTwo) {
