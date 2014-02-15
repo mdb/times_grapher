@@ -44,9 +44,29 @@ define('views/graph_spec', [
       $('.bars').remove();
     });
 
+    describe("#initialize", function () {
+      it("properly handles route change events", function () {
+        spyOn(graph, 'clearView');
+
+        $(document).trigger('routeChange');
+
+        expect(graph.clearView).toHaveBeenCalled();
+      });
+    });
+
     describe("#headingEl", function () {
       it("returns the jQuery-selected graph heading element", function () {
         expect(graph.headingEl()).toEqual($('h2.graph-heading'));
+      });
+    });
+
+    describe("#clearView", function () {
+      it("properly sets the heading element's HTML", function () {
+        expect(graph.headingEl().html()).toEqual('');
+
+        graph.clearView();
+
+        expect(graph.headingEl().html()).toEqual('...');
       });
     });
 

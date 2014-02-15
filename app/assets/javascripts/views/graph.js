@@ -15,10 +15,30 @@ define('views/graph', [
 ) {
 
   var GraphView = Backbone.View.extend({
+    initialize: function () {
+      var self = this;
+
+      $(document).on('routeChange', function () {
+        self.clearView();
+      });
+    },
+
     el: '.graph',
 
     headingEl: function () {
       return $('h2.graph-heading');
+    },
+
+    clearView: function () {
+      this.headingEl().html('...');
+
+      if (this.rendered) {
+        this.labels.$el.html('');
+        this.yAxis.$el.html('');
+        this.bars.$el.html('');
+      } else {
+        return false;
+      }
     },
 
     render: function () {
@@ -28,6 +48,7 @@ define('views/graph', [
       this.renderLabels();
       this.renderYAxis();
       this.renderBars();
+      this.rendered = true;
     },
 
     renderHeading: function () {
