@@ -19,6 +19,10 @@ class Article
     @json['pub_date']
   end
 
+  def pretty_pub_date
+    Date.parse(pub_date).strftime("%A, %B %e, %Y")
+  end
+
   def original_byline
     @json['byline']['original'] unless @json['byline'].nil? || @json['byline'].empty?
   end

@@ -11,7 +11,7 @@ describe Article do
       :headline => {
         :main => 'some_headline'
       },
-      :pub_date => 'some_pub_date',
+      :pub_date => '2009-12-31T13:09:48Z',
       :byline => {
         :original => 'some_byline'
       },
@@ -67,6 +67,12 @@ describe Article do
   describe '#pub_date' do
     subject { article.pub_date }
 
-    it { should eq 'some_pub_date' }
+    it { should eq '2009-12-31T13:09:48Z' }
+  end
+
+  describe '#pretty_pub_date' do
+    subject { article.pretty_pub_date }
+
+    it { should eq 'Thursday, December 31, 2009' }
   end
 end
