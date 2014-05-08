@@ -8,10 +8,12 @@ define('views/templates/modal', [
 
   var template = [
     '<div class="modal" id="modal-{{= hyphenatedTerm }}">',
-      '<div>',
+      '<div class="modal-content">',
         '<a class="close" href="#">x</a>',
-        '<ul class="articles-{{= hyphenatedTerm }} articles"></ul>',
-        '<button>Load more</button>',
+        '<div class="modal-inner-content">',
+          '<ul class="articles-{{= hyphenatedTerm }} articles"></ul>',
+          '<button>Load more</button>',
+        '</div>',
       '</div>',
     '</div>'
   ];

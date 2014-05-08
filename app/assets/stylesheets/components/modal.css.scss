@@ -1,6 +1,9 @@
 @import 'variables';
 @import 'compass';
 
+$close_button_dimensions: 30px;
+$modal_width: 650px;
+
 .modal {
   position: fixed;
   top: 0;
@@ -20,22 +23,42 @@
     pointer-events: auto;
   }
 
-  div {
-    width: 650px;
+  div.modal-content {
+    width: $modal_width;
     height: 80%;
-    position: relative;
     margin: 5% auto;
+    position: relative;
+
+    &.about {
+      width: $modal_width/1.5;
+      height: 55%;
+
+      div.modal-inner-content {
+        width: $modal_width/1.5;
+      }
+    }
+
+    .close {
+      font-family: $secondary_font_family;
+      background: $border_color;
+      color: $link_color;
+      line-height: $close_button_dimensions;
+      position: absolute;
+      right: -54px;
+      top: 0;
+      text-align: center;
+      width: $close_button_dimensions;
+      text-decoration: none;
+    }
+  }
+
+  div.modal-inner-content {
+    height: 100%;
+    width: $modal_width;
     padding: 20px;
     border: 7px solid $border_color;
     background: #fff;
     overflow: auto;
-
-    &.about {
-      height: 225px;
-      width: 450px;
-      overflow-y: hidden;
-      overflow-x: hidden;
-    }
 
     h1 {
       color: #313131;
@@ -52,19 +75,6 @@
       line-height: 20px;
       font-size: 15px;
       margin-bottom: 15px;
-    }
-
-    .close {
-      font-family: $secondary_font_family;
-      background: $border_color;
-      color: $link_color;
-      line-height: 30px;
-      position: absolute;
-      right: -7px;
-      top: -7px;
-      text-align: center;
-      width: 30px;
-      text-decoration: none;
     }
 
     button {
